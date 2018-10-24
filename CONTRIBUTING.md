@@ -1,11 +1,3 @@
-This is a standard contributing guide for Fatiando a Terra projects. Copy and
-paste it on your repo along with the Code of Conduct and Maintainers Guide.
-
-If you make any changes that aren't specific to your repo, please contribute
-them back to this repository and mention @fatiando/core in the pull request.
-We would appreciate it if you open PRs with your changes to the other projects
-as well.
-
 # Contributing Guidelines
 
 :tada: **First off, thank you for considering contributing to our project!** :tada:
@@ -188,7 +180,7 @@ run.
 To install the current source code into your testing environment, run:
 
 ```bash
-make develop
+make install
 ```
 
 This installs your project in *editable* mode, meaning that changes made to the source
@@ -201,7 +193,7 @@ We use [Black](https://github.com/ambv/black) to format the code so we don't hav
 think about it.
 Black loosely follows the [PEP8](http://pep8.org) guide but with a few differences.
 Regardless, you won't have to worry about formatting the code yourself.
-Before committing, run black to automatically format your code:
+Before committing, run it to automatically format your code:
 
 ```bash
 make format
@@ -211,10 +203,14 @@ Don't worry if you forget to do it.
 Our continuous integration systems will warn us and you can make a new commit with the
 formatted code.
 
-To check your code for style and common errors (runs `pylint`), run:
+We also use [flake8](http://flake8.pycqa.org/en/latest/) and
+[pylint](https://www.pylint.org/) to check the quality of the code and quickly catch
+common errors.
+The [`Makefile`](Makefile) contains rules for running both checks:
 
 ```bash
-make check
+make check   # Runs flake8 and black (in check mode)
+make lint    # Runs pylint, which is a bit slower
 ```
 
 ### Testing your code
@@ -235,13 +231,9 @@ If you're not sure how to do this or are having trouble, submit your pull reques
 anyway.
 We will help you create the tests and sort out any kind of problem during code review.
 
-Run the tests using:
+Run the tests and calculate test coverage using:
 
     make test
-
-and the coverage analysis using:
-
-    make coverage
 
 The coverage report will let you know which lines of code are touched by the tests.
 **Strive to get 100% coverage for the lines you changed.**

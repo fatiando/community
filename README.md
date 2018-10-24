@@ -10,7 +10,11 @@ We also have a Gitter chat room for all of Fatiando at https://gitter.im/fatiand
 This repository contains our standard [Contributing Guide](CONTRIBUTING.md),
 [Maintainers Guide](MAINTENANCE.md), and [Code of Conduct](CODE_OF_CONDUCT.md) that get
 copied to all Fatiando a Terra repositories.
-Please feel free to use them for your own projects as well.
+
+Please feel free to use these files for your own projects. If you make any changes that
+aren't specific to your project, please contribute them back to this repository and
+mention `@fatiando/core` in the pull request. We would appreciate it if you open PRs
+with your changes to the other projects as well.
 
 ## License
 
