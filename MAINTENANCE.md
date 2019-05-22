@@ -81,7 +81,7 @@ file of your project. Then:
 3. Include as authors anyone who made contributions between now and the last release.
 
 On the other hand, if you're making the first release of the project, you need to create
-a new release for it inside the
+a **New upload** for it inside the
 [Fatiando a Terra community at Zenodo](https://zenodo.org/communities/fatiando/).
 
 1. Make sure the Fatiando a Terra community is chosen when filling the release draft.
