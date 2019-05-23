@@ -2,7 +2,7 @@
 
 :tada: First of all, thank you for considering getting involved in our project! :tada:
 
-Any help/feedback you can provide is greatly appreciated.
+**Any help/feedback you can provide is greatly appreciated.**
 
 If you want to get involved with any of our projects, please see the
 `CONTRIBUTING.md` file inside any of them for instructions.
@@ -13,7 +13,7 @@ This repository contains our standard [Contributing Guide](CONTRIBUTING.md),
 copied to all Fatiando a Terra repositories.
 
 Please feel free to use these files for your own projects. 
-** If you make any changes that aren't specific to your project, 
+**If you make any changes that aren't specific to your project, 
 please contribute them back to this repository.**
 
 Pull requests (PRs) to all of our projects will be automatically opened once a PR is merged
