@@ -46,7 +46,7 @@ Update the copies in this repository to match.
 See https://github.com/fatiando/contributing/commit/$TRAVIS_COMMIT
 EOF
         git commit --file=message.txt
-        if [ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "master" ]; then
+        if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_BRANCH" == "master" ]; then
             echo "Pushing and making a pull request"
             git push -u origin $BRANCH 2>&1 >/dev/null
             hub pull-request --file message.txt --base "fatiando:master" --head "fatiando-bot:$BRANCH"
