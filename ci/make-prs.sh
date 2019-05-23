@@ -10,6 +10,11 @@ PATCH=patch-by-travis-bot
 BRANCH=travis_contributing_update_bot
 
 for repo in $REPOSITORIES; do
+    echo ""
+    echo "Updating repository $repo ..."
+    echo "#############################################################################"
+    echo ""
+
     git clone https://${GITHUB_TOKEN}@github.com/$repo $DEPLOY 2>&1 >/dev/null
     cd $DEPLOY
 
