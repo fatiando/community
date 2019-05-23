@@ -8,7 +8,7 @@ set -e
 
 DEPLOY=deploy_repo
 PATCH=patch-by-travis-bot
-BRANCH=travis_contributing_update_bot
+BRANCH=travis_contributing_update_bot_$TRAVIS_COMMIT
 
 for repo in $REPOSITORIES; do
     echo ""
@@ -16,12 +16,14 @@ for repo in $REPOSITORIES; do
     echo "#############################################################################"
     echo ""
 
-    git clone https://${GITHUB_TOKEN}@github.com/$repo $DEPLOY 2>&1 >/dev/null
+    git clone https://${GITHUB_TOKEN}@github.com/fatiando-bot/$repo.git $DEPLOY 2>&1 >/dev/null
     cd $DEPLOY
 
-    # Configure git to a dummy Travis user
-    git config user.email "travis@nothing.com"
-    git config user.name "TravisCI"
+    git remote add upstream https://github.com/fatiando/$repo.git
+    git pull upstream master
+
+    git config user.email "fatiando@gmail.com"
+    git config user.name "Fatiando a Terra Bot"
 
     git checkout -b $BRANCH
 
@@ -41,12 +43,13 @@ Update files from fatiando/contributing
 Changes have been made in https://github.com/fatiando/contributing to:
 $changed
 Update the copies in this repository to match.
+See https://github.com/fatiando/contributing/commit/$TRAVIS_COMMIT
 EOF
         git commit --file=message.txt
         if [ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "master" ]; then
             echo "Pushing and making a pull request"
             git push -u origin $BRANCH 2>&1 >/dev/null
-            hub pull-request --file=message.txt
+            hub pull-request --file message.txt --base "fatiando:master" --head "fatiando-bot:$BRANCH"
         else
             echo "Not pushing since this is a pull request."
         fi
