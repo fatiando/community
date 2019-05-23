@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Deploy PRs to registered repositories updating the contributing files.
+# Only makes the PRs if on the master branch
 
 # To return a failure if any commands inside fail
 set -e
@@ -42,10 +43,10 @@ $changed
 Update the copies in this repository to match.
 EOF
         git commit --file=message.txt
-        if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+        if [ "$TRAVIS_PULL_REQUEST" == "false" && "$TRAVIS_BRANCH" == "master" ]; then
             echo "Pushing and making a pull request"
-            #git push -u origin $BRANCH 2>&1 >/dev/null
-            #hub pull-request --file=message.txt
+            git push -u origin $BRANCH 2>&1 >/dev/null
+            hub pull-request --file=message.txt
         else
             echo "Not pushing since this is a pull request."
         fi
