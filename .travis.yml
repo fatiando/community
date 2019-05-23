@@ -21,9 +21,9 @@ env:
       - REPOSITORIES="fatiando/verde fatiando/harmonica fatiando/pooch fatiando/rockhound"
 
 install:
-  - sudo add-apt-repository ppa:cpick/hub
-  - sudo apt-get update
-  - sudo apt-get install hub
+  - sudo add-apt-repository ppa:cpick/hub -y
+  - sudo apt-get update -q
+  - sudo apt-get install hub -y
 
 script:
   - ./ci/make-prs.sh
