@@ -1,6 +1,7 @@
 # Contributing to Fatiando a Terra
 
 :tada: First of all, thank you for considering getting involved in our project! :tada:
+
 Any help/feedback you can provide is greatly appreciated.
 
 If you want to get involved with any of our projects, please see the
@@ -11,10 +12,14 @@ This repository contains our standard [Contributing Guide](CONTRIBUTING.md),
 [Maintainers Guide](MAINTENANCE.md), and [Code of Conduct](CODE_OF_CONDUCT.md) that get
 copied to all Fatiando a Terra repositories.
 
-Please feel free to use these files for your own projects. If you make any changes that
-aren't specific to your project, please contribute them back to this repository and
-mention `@fatiando/core` in the pull request. We would appreciate it if you open PRs
-with your changes to the other projects as well.
+Please feel free to use these files for your own projects. 
+** If you make any changes that aren't specific to your project, 
+please contribute them back to this repository.**
+
+Pull requests (PRs) to all of our projects will be automatically opened once a PR is merged
+in this repository.
+
+[![TravisCI build status](https://img.shields.io/travis/fatiando/contributing/master.svg?style=flat-square&label=TravisCI)](https://travis-ci.org/fatiando/contributing)
 
 ## License
 
