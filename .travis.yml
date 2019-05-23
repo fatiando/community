@@ -13,6 +13,11 @@ branches:
     # Regex to build tagged commits with version numbers
     - /\d+\.\d+(\.\d+)?(\S*)?$/
 
+addons:
+  apt:
+    packages:
+      - hub
+
 env:
   global:
       # Encrypted variables
