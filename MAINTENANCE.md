@@ -150,6 +150,20 @@ A new source distribution will be uploaded to PyPI, a new folder with the docume
 HTML will be pushed to *gh-pages*, and the `latest` link will be updated to point to
 this new folder.
 
+Meanwhile we can add information to the newly created GitHub release on
+`https://github.com/fatiando/PROJECT/releases`:
+1. Change release title to the version number (including the `v`).
+2. Fill the release description with a Markdown version of the latest changelog
+   entry. The `doc/changes.rst` file can be converted to Markdown using
+   `pandoc`:
+   ```
+   pandoc -s doc/changes.rst -o changes.md
+   ```
+3. The first line of the release description should be the DOI of the release:
+   ```
+   DOI: https://doi.org/<new-doi>
+   ```
+
 ### Archiving on Zenodo
 
 Grab a zip file from the Github release and upload to Zenodo using the previously
