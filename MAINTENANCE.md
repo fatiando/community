@@ -79,6 +79,7 @@ file of your project. Then:
 1. Delete all existing files (they will be replaced with the new version).
 2. Reserve a DOI and save the release draft.
 3. Include as authors anyone who made contributions between now and the last release.
+4. Update release date.
 
 On the other hand, if you're making the first release of the project, you need to create
 a **New upload** for it inside the
