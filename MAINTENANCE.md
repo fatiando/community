@@ -113,7 +113,12 @@ a **New upload** for it inside the
     ```
 
 6. Add a link to the new release version documentation in `README.rst`.
-7. Open a new PR with the updated changelog.
+7. Update DOI badge in `README.rst`.
+8. Update citation on `CITATION.rst`.
+8. Find any appearance of the old DOI and check if it needs to be updated or
+   the new one must be added. You can perform the search through
+   `git grep <OLD-DOI>`.
+8. Open a new PR with the updated changelog.
 
 ### Check the README syntax
 
