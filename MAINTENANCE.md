@@ -114,12 +114,10 @@ a **New upload** for it inside the
     ```
 
 6. Add a link to the new release version documentation in `README.rst`.
-7. Update DOI badge in `README.rst`.
-8. Update citation on `CITATION.rst`.
-8. Find any appearance of the old DOI and check if it needs to be updated or
-   the new one must be added. You can perform the search through
-   `git grep <OLD-DOI>`.
-8. Open a new PR with the updated changelog.
+7. Open a new PR with the updated changelog.
+
+Both the Zenodo badge on `README.rst` and the DOI link on `CITATION.md` should always
+point to the first Zenodo DOI of the library, so don't update them.
 
 ### Check the README syntax
 
