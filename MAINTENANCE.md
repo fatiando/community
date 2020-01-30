@@ -119,6 +119,25 @@ a **New upload** for it inside the
 Both the Zenodo badge on `README.rst` and the DOI link on `CITATION.md` should always
 point to the first Zenodo DOI of the library, so don't update them.
 
+
+### Adding JOSS citation
+
+If this release is made after the library has been published on JOSS, you must
+instruct users to cite it if they use the library for their publications.
+This can be done by adding the following lines to `CITATION.rst`:
+
+```
+If you used <PACKAGE> in your research, please consider citing our paper:
+
+    <JOSS citation including the DOI issued by JOSS>
+
+This is an open-access publication. The paper and the associated reviews can be
+freely accessed at: https://doi.org/<JOSS-DOI>
+
+If you need a Bibtex entry for the paper, grab it here:
+https://www.doi2bib.org/bib/<JOSS-DOI>
+```
+
 ### Check the README syntax
 
 Github is a bit forgiving when it comes to the RST syntax in the README but PyPI is not.
