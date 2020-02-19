@@ -1,79 +1,72 @@
-# Authorship Policies
+# Authorship guidelines for academic papers and software archives
 
-We are deeply thankful to each contributor for helping to make Fatiando
-a Terra what it is. Is our spirit to recognize the work made by each
-contributor with fairness. For that reason we considered it's necessary to
-define authorship policies so we have clear rules for defining when we need to
-give credit to other contributors and how to do so.
+First of all, we are deeply thankful to everyone who has helped make Fatiando a
+Terra what it is today. Our goal for this document is to establish guidelines
+for giving credit to contributors for their work.
+To do so, we will attempt to define:
 
-The main goals of these authorship policies are:
+- Fair and diverse ways of providing recognition for contributors' efforts.
+- Define _contributions_ in a broad way: writing code and/or documentation,
+  providing ideas, fostering the community, etc.
 
-- Recognize contributors efforts on the most fair way.
-- Define _contributions_ on a broad way: from writing code to other types of
-  intellectual contributions.
-- Avoid maintaining a long list of authors in the long term.
+The following are the ways in which individuals who have contributed will be
+recognized.
 
+> **Note**: These policies are not set in stone and may be changed to
+> accommodate the growth of the project or the preferences of the community.
 
-## Authors
+## The `AUTHORS.md` file
 
-Any contributor that made any intellectual contribution on the library is
-a candidate for consider them as an _author_.
-These contributions include:
-- being author or coauthor of any Pull Request that has been successfully merged into
-`master`,
-- review code on any Pull Request,
-- make intellectual contributions that were indispensable for the current status of the
-  library.
+Anyone who has contributed a pull request to the project is welcome to add
+themselves to the `AUTHORS.md` file. This file lives in the repository and is
+packaged with distributions. This is an optional process.
 
-Any candidate can be considered author if they meet the following requirements:
-- The last contribution made by the candidate is not older than the previous major
-  release (e.g. a candidate who's last contribution was on v1.2.0 can be author of any
-  v2.x.x release, but not on any release after or equal to v3.0.0).
-- The contributor must fulfill a valid full name, i.e. at least one first and one last
-  name.
+## Changelog for each release
 
-If all these requirements are met, the contributor **must** add themselves to the
-`AUTHORS.md` file located on the library repository, providing their GitHub username,
-their full name, and optionally their ORCID number and affiliation.
+Every time we make a release, everyone who has made a commit to the repository
+since the previous release will be mentioned in the changelog entry. If their
+full name is available on Github, we will use it. Otherwise, we will use the
+Github handle. This is a way of saying "Thank you".
 
+## Authorship on Zenodo archives of releases
 
-## Opt out authorship
+Anyone who has contributed to the repository (i.e., is know to `git log`) will
+be invited to be an author on the Zenodo archive of new releases.
+To be included as an author, you *must* add the following to `AUTHORS.md`:
 
-Contributors have the right of being omitted from the authors' list by not adding
-themselves to `AUTHORS.md`.
+1. Full name
+2. Affiliation (can be "Unaffiliated")
+3. ORCID (optional)
 
-Neither a full name, an ORCID number nor an affiliation is needed for making
-contributions to any library belonging to Fatiando a Terra.
-Any contributor has the right to be anonymous if they want to.
+The order of authors will be defined by the number of commits to the repository
+since the last major release (`git shortlog vX.0.0...HEAD -sne`). The order can
+also be changed on a case-by-case basis.
 
+If you have contributed and do not wish to be included in Zenodo archives,
+there are a few options:
 
-## Releasing and publishing
+1. Don't add yourself to `AUTHORS.md`
+2. Remove yourself from `AUTHORS.md`
+3. Indicate next to your name on `AUTHORS.md` that you do not wish to be
+   included with something like `(not included in Zenodo)`.
 
-At the time of making a new release or submitting the library to a scientific Journal,
-the submitting authors **have the obligation** to add as author to any contributor that
-is listed on `AUTHORS.md`.
-The submitting authors have the right to omit any contributor that is not listed on
-`AUTHORS.md`.
+## Scientific publications (papers)
 
-Authors order will be defined based on the number of commits made since the previous
-major release.
-Authors order can be obtained by running:
-```
-git shortlog vX.0.0...HEAD -sne
-```
-where `vX.0.0` is the tag for the previous major release (e.g. v1.0.0 if we are
-releasing v2.1.0; v2.0.0 if we are releasing v3.0.0.).
+We aim to write academic paper for most of your software packages. Ideally, we
+will publish updated papers for major changes or large new components of the
+package.
 
-The location of any author that hasn't made any commit should be decided by all
-authors of the new release.
+To be included as an author on the paper, you *must* satisfy the following
+criteria:
 
+1. Have made a contribution to the repository or significant non-coding
+   contributions.
+2. Provide your full name, affiliation, and (optionally) ORCID. These can be
+   submitted on pull requests to the corresponding paper repository.
+3. Write and/or read and review the manuscript in a timely manner and provide
+   comments on the paper (even if it's just an "OK", but preferably more).
 
-### Removing old authors
-
-When creating a new major release, all previous authors that don't satisfy the
-previous requirements should be removed from `AUTHORS.md` through a Pull Request.
-
-
-## Note
-
-These authorship policies may be changed in the future if it's needed.
+The order of authors will be defined by the number of commits made since the
+previous major release (`git shortlog vX.0.0...HEAD -sne`). The order of any
+author who hasn't made any commits will be decided by all authors. The order
+can also be changed on a case-by-case basis.
