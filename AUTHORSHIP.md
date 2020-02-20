@@ -25,8 +25,8 @@ packaged with distributions. This is an optional process.
 
 Every time we make a release, everyone who has made a commit to the repository
 since the previous release will be mentioned in the changelog entry. If their
-full name is available on Github, we will use it. Otherwise, we will use the
-Github handle. This is a way of saying "Thank you".
+full name is available on GitHub, we will use it. Otherwise, we will use the
+GitHub handle. This is a way of saying "Thank you".
 
 ## Authorship on Zenodo archives of releases
 
@@ -52,7 +52,7 @@ there are a few options:
 
 ## Scientific publications (papers)
 
-We aim to write academic paper for most of your software packages. Ideally, we
+We aim to write academic papers for most of your software packages. Ideally, we
 will publish updated papers for major changes or large new components of the
 package.
 
