@@ -39,8 +39,7 @@ To be included as an author, you *must* add the following to `AUTHORS.md`:
 3. ORCID (optional)
 
 The order of authors will be defined by the number of commits to the repository
-since the last major release (`git shortlog vX.0.0...HEAD -sne`). The order can
-also be changed on a case-by-case basis.
+(`git shortlog -sne`). The order can also be changed on a case-by-case basis.
 
 If you have contributed and do not wish to be included in Zenodo archives,
 there are a few options:
@@ -61,12 +60,12 @@ criteria:
 
 1. Have made a contribution to the repository or significant non-coding
    contributions.
-2. Provide your full name, affiliation, and (optionally) ORCID. These can be
-   submitted on pull requests to the corresponding paper repository.
+2. Add your full name, affiliation, and (optionally) ORCID to the paper. 
+   These can be submitted on pull requests to the corresponding paper repository.
 3. Write and/or read and review the manuscript in a timely manner and provide
    comments on the paper (even if it's just an "OK", but preferably more).
 
 The order of authors will be defined by the number of commits made since the
-previous major release (`git shortlog vX.0.0...HEAD -sne`). The order of any
-author who hasn't made any commits will be decided by all authors. The order
-can also be changed on a case-by-case basis.
+previous major release that has an associated paper (`git shortlog vX.0.0...HEAD -sne`). 
+The order of any author who hasn't made any commits will be decided by all authors. 
+The order can also be changed on a case-by-case basis.
