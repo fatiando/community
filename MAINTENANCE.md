@@ -97,7 +97,7 @@ Mendeley, etc).
 ```
 
 If the project has been publish as an academic paper (for example, on
-[JOSS](https://joss.theoj.org), **update the `CITATION.rst` to point to the
+[JOSS](https://joss.theoj.org)), **update the `CITATION.rst` to point to the
 paper instead of the Zenodo archive**.
 
 ```
@@ -166,9 +166,6 @@ The rest of the process is the same as above.
 
 6. Add a link to the new release version documentation in `README.rst`.
 7. Open a new PR with the updated changelog.
-
-Both the Zenodo badge on `README.rst` and the DOI link on `CITATION.md` should always
-point to the first Zenodo DOI of the library, so don't update them.
 
 ### Check the README syntax
 
