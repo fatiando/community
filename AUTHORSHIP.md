@@ -32,10 +32,12 @@ GitHub handle. This is a way of saying "Thank you".
 
 Anyone who has contributed to the repository (i.e., appears on `git log`) will
 be invited to be an author on the Zenodo archive of new releases.
-To be included as an author, you *must* add the following to `AUTHORS.md`:
+
+To be included as an author, you *must* add the following to the `AUTHORS.md`
+file of the repository:
 
 1. Full name
-2. Affiliation (can be "Unaffiliated")
+2. Affiliation (if omitted, we will use "Unaffiliated")
 3. ORCID (optional)
 
 The order of authors will be defined by the number of commits to the repository
@@ -60,12 +62,13 @@ criteria:
 
 1. Have made a contribution to the repository or significant non-coding
    contributions.
-2. Add your full name, affiliation, and (optionally) ORCID to the paper. 
-   These can be submitted on pull requests to the corresponding paper repository.
+2. Add your full name, affiliation, and (optionally) ORCID to the paper. These
+   can be submitted on pull requests to the corresponding paper repository.
 3. Write and/or read and review the manuscript in a timely manner and provide
    comments on the paper (even if it's just an "OK", but preferably more).
 
 The order of authors will be defined by the number of commits made since the
-previous major release that has an associated paper (`git shortlog vX.0.0...HEAD -sne`). 
-The order of any author who hasn't made any commits will be decided by all authors. 
-The order can also be changed on a case-by-case basis.
+previous major release that has an associated paper (`git shortlog
+vX.0.0...HEAD -sne`). The order of any author who hasn't made any commits will
+be decided by all authors. The order can also be changed on a case-by-case
+basis.
