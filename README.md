@@ -10,8 +10,9 @@ We also have an open Slack chat room for all of Fatiando at
 [contact.fatiando.org](http://contact.fatiando.org).
 
 This repository contains our standard [Contributing Guide](CONTRIBUTING.md),
-[Maintainers Guide](MAINTENANCE.md), and [Code of Conduct](CODE_OF_CONDUCT.md) that get
-copied to all Fatiando a Terra repositories.
+[Maintainers Guide](MAINTENANCE.md), [Authorship Guidelines](AUTHORSHIP.md),
+and [Code of Conduct](CODE_OF_CONDUCT.md) that get copied to all Fatiando a
+Terra repositories.
 
 Please feel free to use these files for your own projects.
 **If you make any changes that aren't specific to your project,
