@@ -30,7 +30,7 @@ GitHub handle. This is a way of saying "Thank you".
 
 ## Authorship on Zenodo archives of releases
 
-Anyone who has contributed to the repository (i.e., is know to `git log`) will
+Anyone who has contributed to the repository (i.e., appears on `git log`) will
 be invited to be an author on the Zenodo archive of new releases.
 To be included as an author, you *must* add the following to `AUTHORS.md`:
 
