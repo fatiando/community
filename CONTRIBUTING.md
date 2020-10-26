@@ -125,6 +125,17 @@ hesitate to [ask questions](#how-can-i-talk-to-you)):
 * Aaron Meurer's [tutorial on the git workflow](http://www.asmeurer.com/git-workflow/)
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
+If you're new to git and Unix Shell, we recomen you the
+[Software carpentry](https://software-carpentry.org/) lessons, which are in
+English and Spanish:
+
+* [Version Control with Git](https://software-carpentry.org/lessons/) / :ceuta_melilla: [Control de
+versiones con Git](https://software-carpentry.org/lessons/)
+* [The Unix Shell](https://software-carpentry.org/lessons/) / :ceuta_melilla:
+[La Terminal de Unix](https://software-carpentry.org/lessons/)
+
+
+
 ### General guidelines
 
 We follow the [git pull request workflow](http://www.asmeurer.com/git-workflow/) to
