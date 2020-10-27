@@ -126,7 +126,7 @@ hesitate to [ask questions](#how-can-i-talk-to-you)):
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 If you're new to working with git, GitHub, and the Unix Shell, we recommend 
-starting with the [Software carpentry](https://software-carpentry.org/) lessons, 
+starting with the [Software Carpentry](https://software-carpentry.org/) lessons, 
 which are available in English and Spanish:
 
 * :gb: [Version Control with Git](http://swcarpentry.github.io/git-novice/) / :es: [Control de
