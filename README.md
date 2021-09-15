@@ -11,17 +11,11 @@ We also have an open Slack chat room for all of Fatiando at
 
 This repository contains our standard [Contributing Guide](CONTRIBUTING.md),
 [Maintainers Guide](MAINTENANCE.md), [Authorship Guidelines](AUTHORSHIP.md),
-and [Code of Conduct](CODE_OF_CONDUCT.md) that get copied to all Fatiando a
-Terra repositories.
+and [Code of Conduct](CODE_OF_CONDUCT.md).
 
 Please feel free to use these files for your own projects.
 **If you make any changes that aren't specific to your project,
 please contribute them back to this repository.**
-
-Pull requests (PRs) to all of our projects will be automatically opened once a PR is merged
-in this repository.
-
-[![TravisCI build status](https://img.shields.io/travis/fatiando/contributing/master.svg?style=flat-square&label=TravisCI)](https://travis-ci.org/fatiando/contributing)
 
 ## License
 
