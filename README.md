@@ -26,10 +26,9 @@ but we welcome participation!
 
 * 2021: https://hackmd.io/@fatiando/development-calls-2021
 
-**Community Calls:** are open to everyone!
-Join us if you're interested in the project,
-want to find out more,
-or just want to chat with fellow coding geoscientists.
+**Community Calls:** Join us if you're interested in the project, want to find
+out more, or just want to chat with fellow coding geoscientists. These are
+informal meetings for us to socialize and get to know each other.
 We'll **post on Slack** when we hold these.
 
 ## Code of Conduct
