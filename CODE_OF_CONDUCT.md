@@ -58,7 +58,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting any of the following people:
 
 * Leonardo Uieda (leouieda@gmail.com)
-* Santiago Soler (EMAIL)
+* Santiago Soler (santiago.r.soler@gmail.com)
 * Agustina Pesce (EMAIL)
 
 All complaints will be reviewed and investigated and will result in a response
