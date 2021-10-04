@@ -59,7 +59,7 @@ reported by contacting any of the following people:
 
 * Leonardo Uieda (leouieda@gmail.com)
 * Santiago Soler (santiago.r.soler@gmail.com)
-* Agustina Pesce (EMAIL)
+* Agustina Pesce (pesce.agustina@gmail.com)
 
 All complaints will be reviewed and investigated and will result in a response
 that is deemed necessary and appropriate to the circumstances. The project team
