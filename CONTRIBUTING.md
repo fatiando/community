@@ -315,7 +315,7 @@ Some things that will increase the chance that your pull request is accepted qui
   [numpy guide](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt)
   for documentation.
 
-Pull requests will automatically have tests run by TravisCI and AppVeyor.
+Pull requests will automatically have tests run by GitHub Actions.
 This includes running both the unit tests as well as code linters.
 Github will show the status of these checks on the pull request.
 Try to get them all passing (green).
