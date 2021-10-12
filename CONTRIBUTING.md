@@ -236,7 +236,7 @@ make lint    # Runs pylint, which is a bit slower
 #### Docstrings
 
 **All docstrings** should follow the
-[numpy style guide](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt).
+[numpy style guide](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard).
 All functions/classes/methods should have docstrings with a full description of all
 arguments and return values.
 
