@@ -104,7 +104,7 @@ download and install anything:
 * On each documentation page, there should be a "Suggest edit" link at the very
   top (click on the GitHub logo).
 * Click on that link to open the respective source file (usually an `.rst` file in the
-  `doc` folder) on GitHub for editing online (you'll need a Github account).
+  `doc` folder) on GitHub for editing online (you'll need a GitHub account).
 * Make your desired changes.
 * When you're done, scroll to the bottom of the page.
 * Fill out the two fields under "Commit changes": the first is a short title describing
