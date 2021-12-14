@@ -102,7 +102,7 @@ You can submit fixes to the documentation pages completely online without having
 download and install anything:
 
 * On each documentation page, there should be an "Suggest edit" link at the very
-  top.
+  top (click on the GitHub logo).
 * Click on that link to open the respective source file (usually an `.rst` file in the
   `doc` folder) on GitHub for editing online (you'll need a Github account).
 * Make your desired changes.
