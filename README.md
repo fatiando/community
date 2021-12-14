@@ -7,8 +7,9 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 
 | Info | |
 |:--|:---|
-| 📱 **Join a call** | https://jitsi.softwareunderground.org/FatiandoATerraMeetings |
-| 📅 **Shared calendar** | http://calendar.fatiando.org |
+| 📱 **Join a call** | https://swu.ng/chateau (Gather Town) |
+| 📜 **Meeting notes & agenda** | https://hackmd.io/@fatiando/development-calls-2021 |
+| 📅 **Shared calendar** | https://www.fatiando.org/calendar |
 
 All our meetings are **open to everyone**!
 
@@ -20,11 +21,7 @@ They are a great way to learn more about day-to-day development and the
 internal workings of our code.
 It's absolutely fine to join and just listen to what we discuss
 but we welcome participation!
-
-📜 The live **meeting notes** can be read and edited by anyone on HackMD
-(archived in the `development-calls` folder of this repository):
-
-* 2021: https://hackmd.io/@fatiando/development-calls-2021
+Meeting notes are archived in the `development-calls` folder of this repository.
 
 **Community Calls:** Join us if you're interested in the project, want to find
 out more, or just want to chat with fellow coding geoscientists. These are
