@@ -2,6 +2,9 @@
 
 :tada: **First off, thank you for considering contributing to our project!** :tada:
 
+> This document includes general guidelines that apply throughout our projects.
+> See `CONTRIBUTING.md` files in individual repositories for project specific instructions.
+
 This is a community-driven project, so it's people like you that make it useful and
 successful.
 These are some of the many ways to contribute:
@@ -62,8 +65,9 @@ read it carefully.
 ## How Can I Talk to You?
 
 Discussion often happens in the issues and pull requests.
-In addition, there is a [Slack chat room](http://contact.fatiando.org) for the
-Fatiando a Terra project where you can ask questions.
+In addition, we also use Slack and other services to chat and organize project 
+activities.
+See https://www.fatiando.org/contact for links and more information.
 
 
 ## Getting credit for contributions
@@ -78,7 +82,7 @@ information.
 
 ## Reporting a Bug
 
-Find the *Issues* tab on the top of the Github repository and click *New Issue*.
+Find the *Issues* tab on the top of the GitHub repository and click *New Issue*.
 You'll be prompted to choose between different types of issue, like bug reports and
 feature requests.
 Choose the one that best matches your need.
@@ -97,10 +101,10 @@ submitting a fix (even better :star2:).
 You can submit fixes to the documentation pages completely online without having to
 download and install anything:
 
-* On each documentation page, there should be an "Improve This Page" link at the very
-  top.
+* On each documentation page, there should be a "Suggest edit" link at the very
+  top (click on the GitHub logo).
 * Click on that link to open the respective source file (usually an `.rst` file in the
-  `doc` folder) on Github for editing online (you'll need a Github account).
+  `doc` folder) on GitHub for editing online (you'll need a GitHub account).
 * Make your desired changes.
 * When you're done, scroll to the bottom of the page.
 * Fill out the two fields under "Commit changes": the first is a short title describing
@@ -141,7 +145,7 @@ make changes to our codebase.
 Every change made goes through a pull request, even our own, so that our
 [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) services
 have a change to check that the code is up to standards and passes all our tests.
-This way, the *master* branch is always stable.
+This way, the *main* branch is always stable.
 
 General guidelines for pull requests (PRs):
 
@@ -171,9 +175,9 @@ We highly recommend using [Anaconda](https://www.anaconda.com/download/) and the
 package manager to install and manage your Python packages.
 It will make your life a lot easier!
 
-The repository includes a conda environment file `environment.yml` with the
+Most of our repositories include a conda environment file `environment.yml` with the
 specification for all development requirements to build and test the project.
-Once you have forked and clone the repository to your local machine, you use this file
+Once you have forked and cloned the repository to your local machine, you use this file
 to create an isolated environment on which you can work.
 Run the following on the base of the repository:
 
@@ -181,19 +185,19 @@ Run the following on the base of the repository:
 conda env create
 ```
 
-Before building and testing the project, you have to activate the environment:
+> **Note:** Environment creation only needs to be done once.
+
+Before building and testing the project, you have to activate the environment
+(see the `environment.yml` file for the environment name):
 
 ```bash
 conda activate ENVIRONMENT_NAME
 ```
 
-You'll need to do this every time you start a new terminal.
+> **Note:** You'll need to activate the environment every time you start a new terminal.
 
-See the [`environment.yml`](environment.yml) file for the list of dependencies and the
-environment name.
-
-We have a [`Makefile`](Makefile) that provides commands for installing, running the
-tests and coverage analysis, running linters, etc.
+Most repositories will also have a [`Makefile`](Makefile) that provides commands for 
+installing, running the tests and coverage analysis, running linters, etc.
 If you don't want to use `make`, open the `Makefile` and copy the commands you want to
 run.
 
@@ -311,9 +315,9 @@ Some things that will increase the chance that your pull request is accepted qui
 * Write documentation for your code (docstrings) and leave comments explaining the
   *reason* behind non-obvious things.
 * Include an example of new features in the gallery or tutorials.
-* Follow the [PEP8](http://pep8.org) style guide for code and the
-  [numpy guide](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt)
+* Follow the [numpy guide](https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt)
   for documentation.
+* Run the automatic code formatter and style checks.
 
 Pull requests will automatically have tests run by GitHub Actions.
 This includes running both the unit tests as well as code linters.
