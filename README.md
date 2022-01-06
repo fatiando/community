@@ -8,7 +8,7 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 | Info | |
 |:--|:---|
 | 📱 **Join a call** | https://swu.ng/chateau (Gather Town) |
-| 📜 **Meeting notes & agenda** | https://hackmd.io/@fatiando/development-calls-2021 |
+| 📜 **Meeting notes & agenda** | https://hackmd.io/@fatiando/development-calls-2022 |
 | 📅 **Shared calendar** | https://www.fatiando.org/calendar |
 
 All our meetings are **open to everyone**!
