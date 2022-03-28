@@ -7,26 +7,22 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 
 | Info | |
 |:--|:---|
-| 📱 **Join a call** | https://swu.ng/chateau (Gather Town) |
+| 📱 **Join a call** | https://meet.jit.si/fatiando-a-terra/dev-calls |
 | 📜 **Meeting notes & agenda** | https://hackmd.io/@fatiando/development-calls-2022 |
 | 📅 **Shared calendar** | https://www.fatiando.org/calendar |
 
 All our meetings are **open to everyone**!
 
-**Development Calls:** We meet up **weekly** to discuss routine project
-development: implementation details, code refactoring, maintenance tasks,
-documentation, etc. Discussions tend to be **more technical** than our
-Community Calls.
-They are a great way to learn more about day-to-day development and the
-internal workings of our code.
+We meet up **weekly** to discuss project development, get to know each other,
+share experiences, and even **code things live** to show our process.
+They are a great way to learn more about day-to-day development and get to 
+know our global community.
 It's absolutely fine to join and just listen to what we discuss
 but we welcome participation!
-Meeting notes are archived in the `development-calls` folder of this repository.
 
-**Community Calls:** Join us if you're interested in the project, want to find
-out more, or just want to chat with fellow coding geoscientists. These are
-informal meetings for us to socialize and get to know each other.
-We'll **post on Slack** when we hold these.
+Meeting notes are archived in the `development-calls` folder of this repository.
+Please **do not edit these directly**. Use the HackMD link above instead 
+(changes there get synced to this repository periodically).
 
 ## Code of Conduct
 
