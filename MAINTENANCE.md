@@ -80,6 +80,9 @@ To start a new release:
    (source [here](https://github.com/fatiando/.github/blob/main/.github/ISSUE_TEMPLATE/release-checklist.md)).
 2. Follow the steps in the checklist.
 
+You can also watch this recording of Leo walking through the process of
+releasing Verde v1.7.0 from March 2022: https://youtu.be/JNMcMuMYn8E
+
 To complete the entire process, you'll need:
 
 1. ["Write" permission](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#permissions-for-each-role)
