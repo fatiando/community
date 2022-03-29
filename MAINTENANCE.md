@@ -1,10 +1,11 @@
 # Maintainers Guide
 
-This page contains instructions for project maintainers about how our setup
-works, making releases, creating packages, etc.
+> If you want to get involved in the project, you may want to read the
+> [Contributing Guide](CONTRIBUTING.md) instead.
 
-If you want to make a contribution to the project, see the
-[Contributing Guide](CONTRIBUTING.md) instead.
+**This guide documents our procedures and policies for project maintenance
+tasks**, including managing our GitHub repository branches, pull requests,
+continuous integration, releasing, and instructing users on citation practices.
 
 
 ## Contents
@@ -75,7 +76,7 @@ There are a few steps that still must be done manually, though.
 
 To start a new release:
 
-1. Create an issue with the "Release checklist" template 
+1. Create an issue with the "Release checklist" template
    (source [here](https://github.com/fatiando/.github/blob/main/.github/ISSUE_TEMPLATE/release-checklist.md)).
 2. Follow the steps in the checklist.
 
@@ -84,10 +85,10 @@ To complete the entire process, you'll need:
 1. ["Write" permission](https://docs.github.com/en/organizations/managing-access-to-your-organizations-repositories/repository-roles-for-an-organization#permissions-for-each-role)
    (or greater) on the GitHub repository.
 2. Be a maintainer on the conda-forge recipe.
-3. Write access to the Zenodo entry for the package. 
+3. Write access to the Zenodo entry for the package.
    Zenodo still doesn't have a way to allow multiple people to do this
    so ask the original creator of the entry to do this part.
-   
+
 
 ## Citations
 
