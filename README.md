@@ -11,13 +11,11 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
   the issues and pull requests of our repositories. Make sure you "watch" them
   to get notified and join the `github-activity` channel on Slack.
 
-## Calls and meeting notes
+## Weekly calls (open to everyone)
 
 * 🗨️ **Join a call**: https://meet.jit.si/fatiando-a-terra/dev-calls 
 * 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2022 
 * 📅 **Shared calendar**: https://www.fatiando.org/calendar
-
-All our meetings are **open to everyone**!
 
 We meet up **weekly** to discuss project development, get to know each other,
 share experiences, and even **code things live** to show our process.
