@@ -3,13 +3,19 @@
 This repository contains resources for the Fatiando community: rules and
 guidelines, meeting notes, a place to organize project wide maintenance, etc.
 
+## Where we hangout 
+
+* [Slack](https://fatiando.org/slack/): Hop on to our chat room to ask questions, 
+  leave comments, and reach out to users and developers.
+* [GitHub](https://github.com/fatiando): Technical discussion happens mostly in
+  the issues and pull requests of our repositories. Make sure you "watch" them
+  to get notified and join the `github-activity` channel on Slack.
+
 ## Calls and meeting notes
 
-| Info | |
-|:--|:---|
-| 📱 **Join a call** | https://meet.jit.si/fatiando-a-terra/dev-calls |
-| 📜 **Meeting notes & agenda** | https://hackmd.io/@fatiando/development-calls-2022 |
-| 📅 **Shared calendar** | https://www.fatiando.org/calendar |
+* 🗨️ **Join a call**: https://meet.jit.si/fatiando-a-terra/dev-calls 
+* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2022 
+* 📅 **Shared calendar**: https://www.fatiando.org/calendar
 
 All our meetings are **open to everyone**!
 
