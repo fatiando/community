@@ -21,10 +21,12 @@ Edit the list of repositories where this should be implemented.
 - [ ] [harmonica](https://github.com/fatiando/harmonica)
 - [ ] [pooch](https://github.com/fatiando/pooch)
 - [ ] [verde](https://github.com/fatiando/verde)
-- [ ] [rockhound-data](https://github.com/fatiando/rockhound-data)
+- [ ] [ensaio](https://github.com/fatiando/ensaio)
+- [ ] [dependente](https://github.com/fatiando/dependente)
 - [ ] [website](https://github.com/fatiando/website)
-- [ ] [.github](https://github.com/fatiando/.github)
+- [ ] [tutorials](https://github.com/fatiando/tutorials)
 - [ ] [community](https://github.com/fatiando/community)
+- [ ] [.github](https://github.com/fatiando/.github)
 
 
 <!--
