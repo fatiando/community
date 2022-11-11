@@ -9,8 +9,8 @@ responsibilities of each role assigned to community members.
 
 The Fatiando a Terra Project (The Project) is a community-driven project that
 develops and maintains open-source software for geophysics.
-Software repositories include those in the
-[`fatiando` GitHub organization][github].
+Software repositories include those in the [`fatiando`][github] and
+[`fatiando-data`][github-data] GitHub organizations.
 They are developed openly and hosted on public repositories.
 Software developed by The Project is released under the BSD 3-clause (or
 similar) open source license.
@@ -262,6 +262,7 @@ document, as per the [CC-0 public domain dedication / license][cc0].
 [numpy]: https://github.com/numpy/numpy/blob/master/doc/source/dev/governance/governance.rst
 [scipy]: https://docs.scipy.org/doc/scipy/reference/dev/governance/governance.html
 [github]: https://github.com/fatiando
+[github-data]: https://github.com/fatiando-data
 [contact]: https://www.fatiando.org/contact
 [website]: https://www.fatiando.org
 [authorship]: https://github.com/fatiando/community/blob/main/AUTHORSHIP.md
