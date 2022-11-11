@@ -16,19 +16,12 @@ Software developed by The Project is released under the BSD 3-clause (or
 similar) open source license.
 
 The Project is developed by a distributed team of developers, called
-the Contributors.
-Contributors are individuals who have contributed code, documentation, designs,
-ideas, examples, or other work to The Project, including answering questions
-and participating on discussion forums.
-Anyone can be a Contributor.
-Contributors can be affiliated with any legal entity or none.
-
+the Project Contributors (see below).
 The Project Community consists of all Contributors and users of The Project.
 Contributors work on behalf of and are responsible to the larger Project
 Community.
 We strive to keep the barrier between Contributors and users as low as
 possible.
-
 The Project is not a legal entity, nor does it currently have any formal
 relationships with legal entities.
 
@@ -51,8 +44,7 @@ The individuals currently occupying each role will be listed on our website
 
 ### Benevolent Director For Life (BDFL)
 
-The Project will have a BDFL (Benevolent Dictator for Life), who is currently
-Leonardo Uieda.
+The Project will have a BDFL (Benevolent Dictator for Life).
 The BDFL is chair of the Steering Council (see below) and has the same
 responsibilities of other Council members.
 In addition:
@@ -203,10 +195,12 @@ The Project Contributors are anyone who has made a contribution to The Project.
 Contributions include, but are not limited to, code, code review,
 infrastructure work, community participation, community help/building,
 education and outreach, design work, etc.
+Anyone can be a Contributor and Contributors can be affiliated with any legal
+entity or none.
+
+There are no responsibilities or powers assigned to Project Contributors.
 Candidates for the other roles in The Project governance are mostly recruited
 from the pool of Project Contributors.
-There are no responsibilities or powers assigned to Project Contributors.
-We're just happy to have them involved in The Project.
 
 ### Project Founders
 
@@ -214,14 +208,6 @@ The Project Founders are the people who played a role in the conceptualization
 of The Project.
 They hold no special authority in The Project and are included as an
 acknowledgement of their contribution.
-
-The Project Founders are:
-
-- Leonardo Uieda ([@leouieda](https://github.com/leouieda))
-- Vanderlei Coelho Oliveira Jr ([@birocoles](https://github.com/birocoles))
-- Jose Fernando Caparica Jr ([@caparicajr](https://github.com/caparicajr))
-- André L. Ferreira ([@eusoubrasileiro](https://github.com/eusoubrasileiro))
-- Henrique Bueno dos Santos ([@hbueno](https://github.com/hbueno))
 
 ## Changes to this document
 
