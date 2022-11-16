@@ -5,12 +5,12 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 
 ## Weekly calls (open to everyone)
 
-* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2022 
+* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2022
 * 📅 **Shared calendar**: https://www.fatiando.org/calendar
 
 We meet up **weekly** to discuss project development, get to know each other,
 share experiences, and even **code things live** to show our process.
-They are a great way to learn more about day-to-day development and get to 
+They are a great way to learn more about day-to-day development and get to
 know our global community.
 It's absolutely fine to join and just listen to what we discuss
 but we welcome participation!
@@ -20,7 +20,7 @@ on how to connect. We post links to the join the call and reminders on our
 chat rooms so keep an eye out!
 
 Meeting notes are archived in the `development-calls` folder of this repository.
-Please **do not edit these directly**. Use the HackMD link above instead 
+Please **do not edit these directly**. Use the HackMD link above instead
 (changes there get synced to this repository periodically).
 
 ## Code of Conduct
@@ -43,6 +43,9 @@ performing maintenance, establishing authorship, and more:
   archives and publications
 * [Maintainers Guide](MAINTENANCE.md): procedures for maintenance tasks like
   handling pull requests, making releases, etc.
+* [Governance Structure](GOVERNANCE.md): how the project is organized and
+  managed by our community, the various roles we occupy, and how to participate
+  in project governance.
 
 Please feel free to use these files for your own projects.
 **If you make any changes that aren't specific to your project,
