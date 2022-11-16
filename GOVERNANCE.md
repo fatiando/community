@@ -22,8 +22,6 @@ Contributors work on behalf of and are responsible to the larger Project
 Community.
 We strive to keep the barrier between Contributors and users as low as
 possible.
-The Project is not a legal entity, nor does it currently have any formal
-relationships with legal entities.
 
 ## Governance
 
