@@ -30,7 +30,7 @@ possible.
 These are the roles that can be assigned to The Project Community members:
 
 - [Steering Council Member](#steering-council)
-- [Benevolent Director For Life (BDFL)](#benevolent-director-for-life-bdfl)
+- [Benevolent Dictator For Life (BDFL)](#benevolent-dictator-for-life-bdfl)
 - [Community Manager](#community-manager)
 - [Package Maintainer](#package-maintainer)
 - [Package Developer](#package-developer)
@@ -100,7 +100,7 @@ The Council reserves the right to eject current Members if they are deemed to
 be actively harmful to the project's well-being, and attempts at communication
 and conflict resolution have failed.
 
-### Benevolent Director For Life (BDFL)
+### Benevolent Dictator For Life (BDFL)
 
 The Project will have a BDFL (Benevolent Dictator for Life).
 The BDFL is chair of the Steering Council (see below) and has the same
