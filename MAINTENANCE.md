@@ -10,11 +10,29 @@ continuous integration, releasing, and instructing users on citation practices.
 
 ## Contents
 
+* [Onboarding](#onboarding)
 * [Branches](#branches)
 * [Reviewing and merging pull requests](#reviewing-and-merging-pull-requests)
 * [Continuous Integration](#continuous-integration)
 * [Making a Release](#making-a-release)
 * [Citations](#citations)
+
+
+## Onboarding
+
+Current maintainers are responsible for onboarding new maintainers and getting them
+up to speed with our processes. 
+
+Here is a checklist of things to do when onboarding a new maintainer:
+
+- [ ] Add them to the appropariate GitHub team to grant admin access to the repository.
+- [ ] Add them to the `setup.cfg` file so that they show up on PyPI.
+- [ ] Make sure they have a PyPI and TestPyPI account with 2FA enabled.
+- [ ] Add them as package owners on PyPI.
+- [ ] Have a meeting to talk about their new responsibilities (outlined in 
+      [`GOVERNANCE.md`](GOVERNANCE.md)).
+- [ ] When a new package release is required, arrange a video call to walk them through 
+      the entire release process.
 
 
 ## Branches
