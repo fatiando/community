@@ -80,6 +80,14 @@ Organization owners:
 * @leouieda
 * @santisoler
 
+## Package archival
+
+Provider: [Zenodo](https://www.zenodo.org)
+
+People with access:
+
+* @leouieda
+
 ## Domain provider
 
 Provider: [Hover](https://www.hover.com)
