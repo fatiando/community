@@ -55,7 +55,7 @@ project, both technically and as a community.
 It is expected that all communication between the Council will be carried out
 in the open through one of The Project's [communication channels][contact].
 
-The Council are responsible for planning, organization, and direction of The
+The Council is responsible for planning, organization, and direction of The
 Project's operations and programs.
 There is an expectation that Steering Council members will attend regular
 online meetings and invest effort in community and organizational strategy, as
@@ -176,7 +176,7 @@ To be eligible for appointment as a Package Maintainer, an individual must be a
 Project Contributor who has produced code contributions to the software that
 are substantial in quality and quantity, and sustained over at least one year.
 The Steering Council can also appoint a Package Maintainer in special
-circumstances, for example of a software has no currently acting Maintainer.
+circumstances, for example if a software has no currently acting Maintainer.
 Maintainers can step down from their role at any time.
 It is expected that they will notify the Steering Council and fellow
 Maintainers with at least one month notice so that a replacement can be
