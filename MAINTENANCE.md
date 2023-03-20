@@ -29,6 +29,7 @@ Here is a checklist of things to do when onboarding a new maintainer:
 - [ ] Add them to the `setup.cfg` file so that they show up on PyPI.
 - [ ] Make sure they have a PyPI and TestPyPI account with 2FA enabled.
 - [ ] Add them as package owners on PyPI.
+- [ ] Add them as maintainer in the corresponding conda-forge feedstock repository.
 - [ ] Have a meeting to talk about their new responsibilities (outlined in 
       [`GOVERNANCE.md`](GOVERNANCE.md)).
 - [ ] When a new package release is required, arrange a video call to walk them through 
