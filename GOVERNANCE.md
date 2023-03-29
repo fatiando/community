@@ -36,7 +36,7 @@ These are the roles that can be assigned to The Project Community members:
 - [Package Developer](#package-developer)
 
 Additionally, the following titles may also be assigned to people who
-have been involved in the project as a means of providing credict for their 
+have been involved in the project as a means of providing credit for their 
 contributions (without the responsibilities that come with one of the roles 
 above):
 
