@@ -87,6 +87,7 @@ Provider: [Zenodo](https://www.zenodo.org)
 People with access:
 
 * @leouieda
+* @santisoler
 
 ## Domain provider
 
