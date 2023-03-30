@@ -5,7 +5,7 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 
 ## Weekly calls (open to everyone)
 
-* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2022
+* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2023
 * 📅 **Shared calendar**: https://www.fatiando.org/calendar
 
 We meet up **weekly** to discuss project development, get to know each other,
