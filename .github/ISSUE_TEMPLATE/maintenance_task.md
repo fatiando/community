@@ -22,6 +22,7 @@ Edit the list of repositories where this should be implemented.
 - [ ] [pooch](https://github.com/fatiando/pooch)
 - [ ] [verde](https://github.com/fatiando/verde)
 - [ ] [ensaio](https://github.com/fatiando/ensaio)
+- [ ] [choclo](https://github.com/fatiando/choclo)
 - [ ] [dependente](https://github.com/fatiando/dependente)
 - [ ] [website](https://github.com/fatiando/website)
 - [ ] [tutorials](https://github.com/fatiando/tutorials)
