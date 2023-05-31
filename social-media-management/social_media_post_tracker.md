@@ -10,10 +10,9 @@
 - :globe_with_meridians: Website https://www.fatiando.org
 - :arrow_forward: Youtube https://www.youtube.com/@FatiandoATerra
 
-
-| Date       | Post          | :hash: |🦣|:calendar:|:bird: |:briefcase:| :octocat:| :globe_with_meridians: | :arrow_forward: |
-|------------|--------------------------------------|----------|--------------|-------------|------------------------|------------|------------------------|---------|
-| 2023-05-30 | BIRS workshop | :heavy_check_mark:| X |:heavy_check_mark:|:heavy_check_mark: |:heavy_check_mark:|X |X|NA|
+| Date       | Post          | :hash: | 🦣 | :calendar: | :bird: | :briefcase: | :octocat: | :globe_with_meridians: | :arrow_forward: |
+|------------|---------------|--------|----|------------|---------|-------------|------------|------------------------|------------------|
+| 2023-05-30 | BIRS workshop | ✅    | ❌ | ✅       | ✅    | ✅          | ❌       | ❌                     | NA               |
 
 
 # Templates
