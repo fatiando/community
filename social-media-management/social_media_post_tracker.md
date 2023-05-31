@@ -1,14 +1,14 @@
 
 # Fatiando a Terra Social Media Post Tracker
 
-:hash: Slack
-🦣 Fosstodon https://fosstodon.org/@fatiando
-:calendar: Calendar https://www.fatiando.org/calendar
-:bird: Twitter https://twitter.com/fatiandoaterra
-:briefcase: LinkedIn https://www.linkedin.com/company/fatiando
-:octocat: Github  https://github.com/orgs/fatiando/discussions/categories/announcements
-:globe_with_meridians: Website https://www.fatiando.org
-:arrow_forward: Youtube https://www.youtube.com/@FatiandoATerra
+- :hash: Slack
+- 🦣 Fosstodon https://fosstodon.org/@fatiando
+- :calendar: Calendar https://www.fatiando.org/calendar
+- :bird: Twitter https://twitter.com/fatiandoaterra
+- :briefcase: LinkedIn https://www.linkedin.com/company/fatiando
+- :octocat: Github  https://github.com/orgs/fatiando/discussions/categories/announcements
+- :globe_with_meridians: Website https://www.fatiando.org
+- :arrow_forward: Youtube https://www.youtube.com/@FatiandoATerra
 
 
 | Date       | Post          | :hash: |🦣|:calendar:|:bird: |:briefcase:| :octocat:| :globe_with_meridians: | :arrow_forward: |
