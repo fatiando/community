@@ -15,6 +15,7 @@
 | 2023-05-30 | BIRS workshop | ✅    | ✅   | ✅       | ✅    | ✅          | ✅        |    ✅                   | NA               |
 
 
+
 # Templates
 
 ## Weekly Fatiando Call
