@@ -13,7 +13,7 @@
 | Date       | Post          | :hash: | 🦣 | :calendar: | :bird: | :briefcase: | :octocat: | :globe_with_meridians: | :arrow_forward: |
 |------------|---------------|--------|----|------------|---------|-------------|------------|------------------------|------------------|
 | 2023-05-30 | BIRS workshop | ✅    | ✅   | ✅       | ✅    | ✅          | ✅        |    ✅                   | NA               |
-
+|2023-06-02|New Dates| #fatiando-github-feed|✅   | ✅  |✅|✅|✅|NA|NA
 
 
 # Templates
@@ -23,6 +23,13 @@ Our weekly Fatiando Call starts in 1 hour! These are open to everyone who is int
 :calling: Join here: https://meet.jit.si/fatiando-a-terra
 :memo: Meeting notes and agenda: https://hackmd.io/@fatiando/development-calls-2023
 
+## New Dates Fatiando Calls
+We have new dates and times for our Weekly Fatiando Development Calls! Starting on 3 June 2023, the calls will alternate weekly between Wednesday 20:00 UTC and Friday 00:00 UTC.
+In summary, we moved the previous time from Thursday 14:00 UTC to Friday 00:00 UTC. 
+Everyone is welcome! 🤝 
+📍More information: https://github.com/fatiando/community
+💬  Join our chat rooms to get notified of calls: https://www.fatiando.org/contact
+📆 Shared Google calendar with meeting times: https://www.fatiando.org/calendar
 
 # Resources
 
