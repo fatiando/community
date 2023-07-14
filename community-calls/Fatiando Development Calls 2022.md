@@ -1,0 +1,1437 @@
+# Fatiando Development Calls 2022
+
+
+:::info
+**Link to the meeting notes for 2023:**   https://hackmd.io/@fatiando/development-calls-2023
+:::
+📱 **Join the video call:** https://meet.jit.si/fatiando-a-terra
+
+📅 **Shared calendar:** https://www.fatiando.org/calendar
+
+> **IMPORTANT**: Everyone is required to follow our 
+> [Code of Conduct](https://github.com/fatiando/community/blob/main/CODE_OF_CONDUCT.md)
+> when participating in the Fatiando community. Please review it carefully.
+
+Development calls are **open to everyone**! Here we discuss project development, socialize, and do some live coding from time to time.
+
+**Everyone is encouraged to participate and edit the notes below.**
+
+--------------------------------------------------------------
+
+## 2022-12-15
+
+**Time:** 15:00 (UTC) 👈🏾 **Different time!**
+
+**Participants:**
+
+- Santi
+- Leo
+- Mariana
+- Lu
+
+**Discussion points:**
+
+* **Last meeting of the year!**
+* Type annotations in Pooch? https://github.com/fatiando/pooch/issues/330
+    * They apparently help IDEs figure things out
+    * Makes the code less accessible to novice coders
+    * Santi and Leo not sure if the price we pay is worth the benefit, since its there to help devs
+    * Some thoughts aligned with our opinion: https://dev.to/etenil/why-i-stay-away-from-python-type-annotations-2041 
+    * Forces everyone to learn type annotation sin order to contribute
+    * Seems like right now the cost is higher than the benefit
+    * To do: Mariana recommended inviting the issue author to a call chat and to clarify why they want this and what the main benefits are.
+* Fatiando domain got renewed on Leo's account
+    * We can ask to transfer it to the fatiando account through email service. Hopefully we won't need to pay again, otherwise we will try it again next year.
+    * After that we could ask swung to pay domain
+* We need a Free-air anomaly vs gravity disturbance page in Harmonica docs
+    * Gettin repeated questions about this so it's worth writing down
+    * Make the page under a new "Explanations" section in the docs. Move the coordinate system page there as well.
+
+## 2022-12-07
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Mariana
+- Matt
+- Santi
+
+**Discussion points:**
+
+- Choclo bug with tensor components (and magnetic fields)
+    - Since we are using a (easting, northing, upward) coordinate system we are experiencing problems with the `g_en` field on points that fall above the vertices of the prism.
+    - We need to evaluate `log(z + r)` where `r` is the distance between the computation point and the vertex, and `z` is the shifted coordinate of the vertex. With this coordinate system `z < 0` and on points on top of the vertex `x=0` and `y=0`, so `r=-x` forcing us to evaluate `log` on zero.
+    - There's a fix! https://github.com/fatiando/choclo/pull/27
+    - But this opens the question: what do we do with singular points?
+        - Return `np.nan`?
+    - Singular points of tensor components:
+        - Diagonal components:
+            - Vertices (`r=0`)
+            - Pair of faces (for `g_uu` are the horizontal faces)
+                - This could be solved evaluating the limit from one of the sides
+        - Non-diagonal components:
+            - Vertices (`r=0`)
+            - Edges (for `g_en` are the vertical edges)
+     - Santi is inclined for:
+         - Choclo should return nans in singular points
+         - Harmonica should check if any observation point is a singular point and warn the user
+         - Diagonal components of the tensor with obs points in the faces should be equal to the limit approaching from **outside**.
+- Matt brought the idea of including a way to tell the forward model of prisms to ignore prisms with little volume (not zero, but below a threshold)
+- What happens if the prism layer has points where `top < bottom`? are we catching that or it just computes?
+
+## 2022-12-01
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Leo
+- Lu
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Cancel meetings before xmas and new year
+    - Last meeting would be Dec 15
+    - Move the 14:00 UTC to 15:00 UTC
+- FFT PR
+- Bug in Choclo with the magnetic field components
+    - Wrong values if the observation points have the same easting, northing cordinate as one of the vertices
+    - Check if increasing the 1e-10 threshold solves it.
+
+## 2022-11-23
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+* Santi
+* Agustina
+* Leo
+* Matt
+
+**Discussion points:**
+
+- First Council meeting and Governance rollout
+    - Council will be added as owners of the GitHub organisation
+    - Must have their membership be public to be listed on the website
+    - Must enable 2 factor authentication to protect their account (since they will have elevated permissions)
+    - Rename these calls to just Fatiando Weekly Calls and say that the Council is expected to attend when possible but everyone is welcome
+    - Appoint Community Managers and confirm Package Maintainers
+- Read Oasis Montaj GRD files with harmonica: [#384](https://github.com/fatiando/harmonica/pull/348)
+    - Lu added support for compressed grids. They always use gzip even if the header says LZWR1.
+    - Santi added support for rotated grids.
+    - Lu added more sample grids and extended the tests for the new features.
+    - This should be ready to be merged 
+        - Lu already approved his review
+        - Anyone interested in take a look at it?
+- Status on the FFT filters PR [#299](https://github.com/fatiando/harmonica/pull/299)?
+    - What's needed to merge it? 
+    - Need some test, current plan is to compare filter output from oasis montaj result (grd file is uploaded but need [#384] merged first)
+    - or we can compare numerical solution use choclo
+    - compare with pygmt filters
+    - if we keep sample files for test don't store as grd files
+    - don't create examples, create user guide pages instead. This could be done on a separate PR. We need to make a release of Ensaio
+- Plans for Harmonica v0.6.0.
+    - Merge GRD reader
+    - Merge FFT PR
+    - A few maintenance tasks
+    - Maybe start transforming public modules into private ones ([314](https://github.com/fatiando/harmonica/issues/314))
+    - Check the milestones: https://github.com/fatiando/harmonica/milestone/5
+- Fatiando tutorial for gravity processing:
+    - The image for applying terrain correction is somewhat confusing on its own. Maybe worth adding the same sketch before removing normal gravity?
+    - We cannot accurately compute normal gravity inside the ellipsoid. 
+        - https://link.springer.com/article/10.1007/s11200-008-0004-4
+    - Update the tutorial and include the water masses above the ellipsoid
+    - Have a harmonica user page that discuss this topics
+- We can convert Issues to Discussions!
+    - First we need to transfer the issue to the `fatiando/community` repo
+    - Then we can convert the issue to a discussion
+    - Example: https://github.com/fatiando/community/discussions/80
+- KEGS Abstract
+    - https://www.kegsonline.org/news/12965307
+- Pycascade abstract
+- Check with Lu if we can move the 14:00 UTC meetings one hour forward
+
+## 2022-11-09
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Agus
+- Leo
+- Lu
+- Santi
+- Mariana :desert_island: 
+
+**Discussion points:**
+
+- Fatiando Mastodon account https://github.com/fatiando/community/issues/75
+    - We can verify the Mastodon account in our website: https://barrd.dev/article/add-a-verified-website-to-your-mastodon-account/
+    - Put links on the website nav and contact page
+    - Leo has the login and can share. Let me know.
+- Invite Leah and David from pyOpenSci to a call for a chat. They've been using Fatiando as a template for their guidance.
+    - Leo will invite them on their Slack.
+- Official roles within the community (AKA governance): https://github.com/fatiando/community/issues/76
+    - Greg Wilson alsways says: "if there is no formal structure, it just means that the structure is hidden." or something like that :wink: 
+    - Overall agreement that we shoul dod this and folow the structure
+    - Having formal roles gives a larger sense of commitment to the project
+    - Important to remember that it's still volunteer and there's no expectation of amount of commitment.
+    - Existig maintainers have responsibility to teach incoming maintainers.
+    - Include teaching/mentoring in more role descriptions. 1 or more people in th role should offically mentor incomig people.
+    - Don't nest teams on GitHub.
+    - Keep the devs teams for people that can push branches to the upstream, but are not maintainers
+    - Steps:
+        - Draft the governance document
+        - Leo names people for the council
+        - Council decides on other roles
+    - First mission of the council: formalize our mission statement and values. Mariana will open a issue :wink: 
+- fatiango.org coming up for renewal at the end of the month. Take this opportunity to move it from Leo's personal account to a Fatiando account. Will renew for 1 year. If we can get sponsorship for the next renewal we could do it for a longer time.
+
+## 2022-10-26
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Leo
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Messages in Matrix don't appear in Slack
+    - Leo will take a look at the bridge
+- Harmonica: Drop support for Python 3.7? (see: https://github.com/fatiando/harmonica/issues/355)
+    - Harmonica tests were failing under Python 3.7 due to some Xarray errors
+    - What's the status on the rest of the libraries?
+    - We need to add a Version Compatibility page on Harmonica's docs
+    - We can wait then. Now eveything looks better with lowest versions support.
+- Harmonica: we are now ready to extend support to Python 3.10 :tada: (see https://github.com/fatiando/harmonica/pull/240)
+- Choclo:
+    - Started adding magnetic fields for prisms
+        - Removed the division by the volume. The volumetric integral is already in the kernels
+        - It's faster to return a tuple with three floats than an array! (1.67 µs ± 3.69 ns vs 1.25 µs ± 22.6 ns)
+        - I still have a confusion with a minus sign. From Blakely, the $\mathbf{B}$ field is:
+            - $\mathbf{B}(\mathbf{p}) = -\frac{\mu_0}{4\pi} \nabla_p \int_R \mathbf{M} \cdot \nabla_q \frac{1}{r} dv$
+            - Since $\mathbf{M}$ does not change in the prism:
+            - $\mathbf{B}(\mathbf{p}) = -\frac{\mu_0}{4\pi} \nabla_p \left[ \mathbf{M} \cdot \int_R \nabla_q \frac{1}{r} dv \right]$
+            - And this could be rewritten as:
+            - $\mathbf{B}(\mathbf{p}) = -\frac{\mu_0}{4\pi} \left[ \bar{\bar{\mathbf{U}}} \cdot \bar{\mathbf{M}} \right]$
+            - Where $\bar{\mathbf{M}}$ is the magnetization vector represented as column vector and $\bar{\bar{\mathbf{U}}}$ is the symmetrical matrix that contains the integrals over the second derivatives of $1/r$.
+                - $u_{ij} = \int_R \frac{\partial^2}{\partial i \partial j} \frac{1}{r} dv$, where $i, j \in \{x, y, z\}$
+            - So, why do we still have a minus sign?
+    - Manually compared the gravity fields of prisms against the ones for a point mass (all good!)
+    - What to do with `magnetic_field` of dipoles? Should we return an array or just a tuple?
+        - Return a tuple
+- Verde got some love this week!
+    - New function to generate 1D coordinates: https://github.com/fatiando/verde/pull/390 Need help finding a name for it.
+    - New nearest neighbor interpolator: https://github.com/fatiando/verde/pull/378
+    - Start using PyGMT in the docs: https://github.com/fatiando/verde/pull/386
+    - Things are almost set for 1.8 (the last release before 2.0)
+- Discussion on how to handle grid generation in Verde and Harmonica: https://github.com/orgs/fatiando/discussions/69
+    - Divorcing Harmonica from Verde is the smartest move
+        - In the future Harmonica could have its own functions for equivalent sources without the need to make them compatible with Verde workflows.
+        - They could have a `field` argument in the `predict` method for predicting another field than the one that was used to fit the coefficients
+        - They `fit` method could take `coordinates` and `data` as dictionaries: with the keys being the fields to which the data and coordinates correspond to.
+        - The `grid` method could recover the `upward` argument (as optional) so it can generate its own grid coordinates. It could also have the `coordinates` as optional argument in case we want to pass coordinates of another grid.
+    - In Verde: remove the deprecation warning from `grid` method. We will allow users to build the grid coordinates inside it or pass custom grid `coordinates`.
+- Boule. Opened PR to restore the coordinate conversion methods: [#142](https://github.com/fatiando/boule/pull/142)
+- xarray survey result a and analysis: https://github.com/xarray-contrib/user-survey 
+
+## 2022-10-20
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Agustina
+- Santi
+- Mariana
+
+**Discussion points:**
+- Progress on coordinate system tutorials (JupyterBook)
+    - Convert rst to Myst markdown: [rst2myst](https://rst-to-myst.readthedocs.io/en/latest/)
+- Mariana's questions about pull request:
+    - https://github.com/fatiando/ensaio/pull/41
+    - https://github.com/fatiando/boule/pull/139
+
+## 2022-10-12
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Agus
+- Leo
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Seed inversion by Leo
+- Survey status 
+    - 27 replies
+    - I start a notebook with plotly but I am not sure
+    - Altair as a replacement of Plotly: https://altair-viz.github.io/
+    - Ask some questions to the survey and figure out which plot to make
+    - Close the survey on next meeting
+
+## 2022-10-06
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Agus
+- Leo
+- Lu
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Ideas for the survey notebook to show the results?
+    - Post final message about the survey on Monday 10 Oct.
+    - Close on Friday.
+    - Agustina is making a notebook for analysing the data.
+    - For the text rssponses, better to manually compile summary sentences and how many times they come up
+- Evolution of Choclo
+    - We already have gravity for prisms and point sources
+    - Started coding magnetic for dipoles
+- Discovered [`ppigrf`](https://github.com/klaundal/ppigrf): pure Python computing IGRF
+- Pooch PR to allow creating a `Pooch` instance based on all files in a given DOI archive: https://github.com/fatiando/pooch/pull/325
+- Sample .grd file from Lu: https://github.com/fatiando/harmonica/pull/348#issuecomment-1261855044
+- Question about https://github.com/fatiando/ensaio/pull/40#issuecomment-1270063471
+
+
+## 2022-09-28
+
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Agustina
+- Leo
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Should we bring back coodinates conversions to Boule?
+    - It's confusing having to change the order of longitude and latitude coordinates in `pymap3d`: https://github.com/fatiando/harmonica/pull/350/files
+    - There's no clear warning when you mix those two, so it's easy to oversee that error.
+    - Could we add wrappers to their functions into Boule with our coordinate order convention?
+    - `pymap3d` could be an optional dependency of Boule only for those two functions.
+    - Solutions:
+        - Ditch the deprecation warnings, wrap the `pymapd3d` functions
+        - Remove them from the `Sphere`
+        - Add `pymap3d` as required dependency
+- New magnetic grid dataset in Ensaio: https://www.fatiando.org/ensaio/dev/gallery/lightning-creek-magnetic.html 
+    - Interpolated with harmonica's gradient-boosted equivalent sources
+    - In Cartesian coordinates (UTM)
+    - Ideal for the FFT examples in Harmonica
+    - Will be out in an upcoming Ensaio release
+    - This notebook could be a tutorial on how to grid using gradient-boosted equivalent sources
+- Leo is prototyping 3D planting inversion for Harmonica: https://github.com/leouieda/planting
+    - Fixing these would help a lot:
+        - https://github.com/fatiando/verde/issues/382
+        - https://github.com/fatiando/verde/issues/138
+    - Not much progress, just playing with a 3D regular mesh format in xarray
+- Tesseroid layer is ready! Will merge it soon: [#316](https://github.com/fatiando/harmonica/pull/316)
+- FFT filters by Lu
+- Question about Reducer in BlockReductions, Verde
+    - One way is to code it by hand using `verde.block_split`: https://www.fatiando.org/verde/latest/api/generated/verde.block_split.html#verde.block_split
+    - Check if Geopandas has something like it. Look for indenxing or grouping.
+    - Might be worth adding an example using `block_split` and Pandas `groupby`
+- How to work with non-colocated grids?
+    - Nearest neightbours interpolation usually is better for grids
+
+## 2022-09-22
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Santiago
+- Agustina
+
+**Discussion points:**
+
+- We went through some missing coverage tests in [#316](https://github.com/fatiando/harmonica/pull/316)
+    - The only missing thing in that PR is to check if the longitude coordinates passed to the constructor of the tesseroid layer doesn't overlap around the earth
+    - Remember that longitude are the centers of the tesseroids. We need to check for overlaps between boundary tesseroids.
+    
+## 2022-09-14
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Leo
+- Mariana
+
+**Discussion points:**
+
+- Quick chat about the new magnetic grid for Ensaio: https://github.com/fatiando-data/lightning-creek-magnetic-grid/
+- Meeting ended because Leo had to leave for a baby-related task :baby: 
+
+## 2022-09-08
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Matt Tankersley
+- Santi
+- Leo
+
+**Discussion points:**
+
+- Version of gdal pinned for building the docs
+    - Was trial and error, but it works
+- Harmonica PR replacing Cartopy with PyGMT is ready to go!
+- Santi will not be able to attend to the 20:00 GMT meetings
+    - We are moving those to Wednesdays 20:00 GMT
+- Matt's Antarctica package: https://antarctic-plots.readthedocs.io/en/latest/tutorial/tutorials.html
+- Choclo roadmap. Figured out an API design.
+    - Post the draft we wrote on the Issue
+- Fatiando survey
+    - Run for a month, see how it goes after that and if we want to keep it running for longer
+    - Put a banner on individual docs pages
+        - Could be a script that adds it directly to the HTML of the latest release.
+        - Can revert the commit after the survey is done
+        - Wouldn't require making new releases
+    - Replace the banner of the front page instead of adding another one
+        - Put the tshirt link in the menu
+- Promoting the forum
+    - Put a link in the main website menu
+    - Link in the READMEs directly
+    - "Ask a question" link in the docs pages as well
+
+## 2022-09-01
+
+**Time:** 20:00 (UTC)
+
+**Participants:**
+
+- Mariana
+- Matt Tankersley
+- Santi
+
+**Discussion points:**
+
+- Harmonica v0.5.1 released
+    - Minor patch fixing some doc bugs and a bugfix for null tesseroids
+- Function to read Oasis Montaj GRD files
+    - https://github.com/fatiando/harmonica/pull/348
+    - How to test it?
+        - One possibliity would be to have several small grd files
+    - Thinks we need to test:
+        - number of bytes per element
+        - rotation
+        - ordering
+        - compression
+    - Geosoft has a database of sample data
+        - Licenses?
+- Choclo is coming to life: https://www.fatiando.org/choclo/dev
+    - We need a logo
+- Geometry inversions
+    - Function that converts inversion parameters (interface for example) to physical model (2 layers of prisms)
+    - Jacobian matrix (pretty easy to generate)
+    - Regularizations (pretty easy with a 2d grid interface)
+    - Solver: scipy least squares for now
+
+## 2022-08-22
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Agustina
+- Federico
+- Santi
+- Leo
+
+**Discussion points:**
+
+- Python event in Argentina: https://pythoncientifico.ar/
+- New package: [Choclo 🌽](https://github.com/fatiando/choclo)
+    - **We need a nice logo!!**
+    - It will host the kernel functions for our gravity and magnetic forward models
+    - Driving force: avoid repeating code with other packages (SimPEG)
+    - Pure Python package: we will rely on Numba for just-in-time compilations and parallelization
+    - Idea: keep Numba dependency optional
+        - Question: provide for-loop based Python functions for users to jit or another version?
+        - Best way is to have separate numpy functions. But that requires 2 separate implementations.
+        - Leave for later if needed since it's a lot of work.
+- Harmonica v0.5.1 patch will be released
+    - Fixes in the documentation
+    - Bugfix for null prisms [#339](https://github.com/fatiando/harmonica/pull/339)
+- New meeting time for the others members
+    - Thursday 14 UTC
+    - Thursday 20 UTC
+- Function to read Oasis `.grd` files
+    - https://help.seequent.com/Oasis-montaj/9.9/en/Content/ss/glossary/grid_file_format__grd.htm
+    - Will go in Harmonica and only for reading
+    - Could call `load_oasis_montaj_grid` and put maybe a little copyright/trademark symbol in the docstring
+- SwUng board meeting yesterday: Leo reported on discussion we had about fiscal sponsoship. Matt encourage us to do the application so we can start trying this out.
+    - We want stickers!
+        - Could design a new one with the main logo + all the project logos + fatiando.org
+    - We need to write "purpose of the collective"
+        - Please indicate the outcomes you are looking for, highlighting the impact you hope the project will have.
+    - Number of active administrators. Approximately how many people will be directly involved in *executing* the project? Include admins and organizers only.
+        - 5 (Leo, Santi, Agustina, Federico, Mariana)
+    - Number of active participants. Approximately how many people will be involved in the project in some way? Include all participants and contributors.
+        - Count all contributors
+- Trying to hack a tool for making the changelogs (nothing too fancy): https://github.com/leouieda/sumario
+    - Good idea: use Markdown for changelogs
+- Get ready for Verde v2.0.0
+    - Add KNearestNeightbour interpolator
+    - Ditch the ScipyGridder and split it into different classes for each method
+    - Add the old `extrapolate` flag from fatiando v0.5
+    - Thinking about publishing a new paper for Verde in [JORS](https://openresearchsoftware.metajnl.com/)
+    
+
+
+## 2022-08-19
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Leo
+- Santi
+- Mariana
+- Agustina
+
+**Discussion points:**
+
+* Fatiando User Survey: 
+    * Create a Google Forms survey to gather some information on the community. Things like:
+        * Which packages are used from Fatiando
+        * Which other geo-related packages are used
+        * Country
+        * Industry
+        * Affiliation
+        * What they use our software for (work, hobby, research, teaching)
+        * Ask about how often it gets used (both code and docs/resources)? 
+            * Could be a slider ("I tried it only once" to "I use it daily")
+        * Same as above but how often you engage with the community (never to daily)
+        * Gender
+        * Ethnicity / member of underepresented group
+        * Which communitation modes they use (forum, issues, chat, social, youtube)
+        * What features they find most useful
+        * What features they most want to see added
+        * Main source of frustrtion
+        * Suggestions for improvement
+    * Multiple choice is easier for people to answer and us to analyze.
+    * Need to think  about what level of use we are interested in.
+    * We can alter or filter the questions depending on user experience.
+    * Goal is to gather info on how we can improve and also how our tools are used and by whom. 
+    * Context: Leo is filling out a progress report and would like to point out all the places where Fatiando is used outside of academica. We don't have data on this and it would also be very useful for future grant applications.
+    * We can commit to making a summary of the results public along with a report. Need to be careful with annonymity (for example, I wouldn't include the affiliation in the public data)
+    * Questions:
+        * How long should it stay open?
+            * When people have more time and energy?
+            * Maybe early Setember is a good time? Not terrible in UK/US/CA. Brazil and Argentina are only geeting a semester started.
+        * Where to advertise and how often to remind people?
+            * Social media (post when it opens and again a few times before the deadline to remind people)
+            * SwUng/SimPEG slack in #general, again when it opens and a few times before it closes
+            * Personal networks and word of mouth: Send to people you know are likely to use it and encourage others to do the same
+            * Banner on the website (like the tshirt one)
+            * Post in the forum
+            * Pinned issues in all of the repositories
+* Harmonica v0.5.0 is out! https://www.fatiando.org/harmonica/v0.5.0/changes.html
+* New package will be born!
+    * **Idea:** create a standalone package for our kernel functions for forward modelling.
+    * **Motivation:** We have some well optimized kernel functions that involve +10 years of knowledge and experience. Some other packages in the Stack can benefit from it (like SimPEG) without the need of adding Harmonica as a depedency.
+    * **Gain:** If other packages start adopting it, we can benefit from possible collaborations on optimizations and new kernels.
+    * Can use it as a backend in Harmonica and implement the switch one PR at a time
+    * Do like we did with Pooch. Make a package with our design and see if there is uptake.
+    * Name could be "choclo" to honour south americans or "elote" for the mexican friends
+
+
+## 2022-08-12
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Mariana
+- Leo
+- Santi
+- Agustina
+
+**Discussion points:**
+
+* Mariana (if she manages to wake up): Jupyter Book available at https://www.fatiando.org/tutorials/ Some issues detected, similar to what is described in https://github.com/executablebooks/MyST-NB/issues/148#issuecomment-632407608 and can be solved with https://myst-nb.readthedocs.io/en/latest/quickstart.html
+Should we try it or just use a simple Markdown (without the fancy Myst stuff)? I think the main goal is to have a nice tutorial that can be downloaded as a notebook and loaded on Binder.
+    * Suggestion: Try https://jupyterbook.org/en/stable/interactive/thebe.html
+    * Focus on making the Jupyter book look nice and it's OK if the notebooks aren't since they're mostly used for the code, not the text
+    * For now, just add a little message saying that some things won't look OK in the notebook and to refer to the website instead
+* Boule v0.4.0 release! https://www.fatiando.org/boule/v0.4.0/changes.html
+    * Highlight: new glossary https://www.fatiando.org/boule/v0.4.0/glossary.html made with sphinx
+* Docs: We're missing theoretical descriptions of methods and explanations. We usually just link to papers but that's not ideal since papers often don't fully derive everything. 
+    * Open issues in the repositories to record the need for more theory pages (as a separate thing from the tutorials/how-to/API)
+    * There is some of this throught docstrings and tutorials that can be reused.
+* Pooch is now used by Scipy: https://github.com/fatiando/pooch/pull/320
+* Changed to using the #fatiando channel on SwUng and #fatiando-a-terra:matrix.org on Matrix/Element. Bridge between the two is now set up so both channels are in sync and users can post to either.
+* Foward modelling `tesseroid_gravity` dosen't ignore the tesseroid with `bottom = top = 0`. It is a problem for the PR to create the `tesseroid_layer`
+    * Add check to `_check_tesseroids` https://github.com/fatiando/harmonica/blob/main/harmonica/forward/_tesseroid_utils.py#L291
+    * Remove tesseroids from the list that have equal sides
+    * Raise a warinig if ignoring any of them
+    * Check if this fixes the problem
+    * If not, we can try thresholds for checking equality
+* Forward modelling `discretize.TensorMesh` with Harmonica
+    * Acomplished the dumb solution! It works!
+    * Faster implementation than the current one in SimPEG
+    * What to do with zero density prisms, should we skip those?
+        * Ignore the zero density ones
+        * Ignore the zero volume ones
+    * Watch out for generating prism lists out of big meshes: use lazy lists or arrays
+    * Do they use the adjoint operator? Do they use the forward model at some point?
+* Planning to release Harmonica v0.5 (maybe today??)
+
+## 2022-08-05
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Leo
+- Santi
+- Lu
+- Mariana
+- Federico
+
+**Discussion points:**
+
+* Anyone interested in inverting the Bushveld gravity residuals with SimPEG? Would make a nice tutorial.
+* Leo: Releasing Boule v0.4.0 whenever I can find some time.
+* Mariana: Playing with Verde for her own data (bathymetry).
+    * Discussed 3D gridding and visualization for Mariana's outputs
+* Harmonica release?
+    * Good to get a new release soon to get the documentation and filters out. Can always finish PRs for a future release.
+* Santi is giving Fatianod overview for SimPEG folks on Thursday
+    * Try to get Harmonica and Boule out by then.
+    * Mariana has nothing to do so she'll finish the jupyter book?
+* Plan for collaborate with SimPEG: gravity forward models
+    * Using our prism forward modelling since it's faster and better tested than theirs
+    * Create a separate package for the underlying forward modelling kernel functions (mostly the numba-based code not the one that checks arrays dimensions, prism_layer, etc)
+    * Would be shared between the 2 projects
+    * Santi will start exploring this in the near future
+* Moving Matrix:
+    * Element/Matrix is already mirroring the #general channel on the Fatiando Slack
+    * People can choose to use Element or Slack, it doesn't matter
+    * The choice now is to:
+        * Keep our Slack + element and point people to register on element instead
+        * Kill our Slack and mirror element to Software Underground (#fatiando channel). We can point people to both on our website.
+    * Decision: Shut down our Slack and mirror Element to #fatiando on the Software Underground. 
+    * TODO:
+        * Lu will post on the Slack announcing that this is happening. People who want to use Slack can go to the Swung and people who don't want that can go to element. (there are links for signing up in the Slack history)
+        * Need to update the https://www.fatiando.org/contact/ page to point to Element first and then say that you can also join Swung.
+        * Once that's in place: 
+            * Leo will disable the registration link for Slack
+            * Leo will connect Element to Swung (may need to ask someone there for this)
+
+## 2022-07-01
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Mariana
+- Santi
+- Leo
+- Federico
+
+**Discussion points:**
+
+- Jupyter Book for tutorials: https://mgomezn.github.io/tutorials/ Questions about format
+    - Two options: All in one notebook or divided into a few markdown files
+    - Division is not worth it since the execution environment isn't preserved
+    - Keep the one page/notebook per tutorial setup since it's easier and plays well with Binder
+- Fiscal sponsorship from Software Underground:
+    - They're looking for projects to trial this. **Shall we sign up?**
+    - Everything is setup on their end:
+        - GitHub sponsor page: https://github.com/sponsors/softwareunderground
+        - Open collective: https://opencollective.com/softwareunderground
+        - Sponsorship agreement: https://softwareunderground.org/fiscal-sponsorship-agreement
+            - Basically we commit to align our goals and SwUng will take 5% of any donation
+            - They handle all of the taxes, payment, accounting, etc
+            - We can ask for them to pay for things using the account or get reimbursed if we pay out of pocket
+        - Application form: https://softwareunderground.org/apply-for-fiscal-sponsorship
+    - Involves filling in the form and accepting the agreement:
+        - Please read the agreement.
+    - If we want to do it and they accept, we just need to put an [entra file in of our repos](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository) and market on website and social media
+    - It would allow us to do paid work, like give courses or add functionality to our software (always open-source, though) for companies. 
+    - They would pay SwUng and either swung could pay us (need to check) or we can use the money for other things like swag, meetings, etc.
+    - Santi:
+        - It's people we trust 
+        - Basically win-win
+        - Agreement is still open for feedback. Drop it in the Software Underground `#swung-org` channel
+    - Mariana:
+        - Timing for feedback when changing terms and protocols
+        - Some wording tweaks (share with swung the specifics)
+        - Hard to know how much to ask for things. Would be good to have some sort of advisors on this or try to figure out hourly salary for some of us as a basis.
+    - Federico:
+        - Would be great to have professional input on marking, particularly to companies since we don't have much experience.
+        - Maybe we can get Matt to come have a chat once this is going. About training offers and how to approach companies.
+    - It was agreed that we will do this
+    - Need to setup an advisory group to hlep us engage with industry partners
+    - Need to draft guiding principles for how we operate going forward
+
+## 2022-06-24
+
+**Time:** 14:00 (UTC)
+
+**Participants:**
+
+- Mariana
+- Santi
+- Lu
+- Leo
+
+**Discussion points:**
+
+- Version disclaimers in Youtube Tutorials:
+    - In Fatiando channel
+    - In Software Underground channel
+- Some comments in Youtube videos
+- GitHub not able to show notebooks properly
+    - Use NBViewer: https://nbviewer.org/
+- Usage of Slack channels
+    - Keep channels or merge the conversation in #general?
+    - **Keep them for now**
+        - Add a welcome message pointing to different channels
+        - And to the Forum
+- Nice T-Shirt video!
+    - Hacking the way to generate the GIF
+    - Tricky to get urls from wayback machine
+- FFT filters
+    - Lu question about https://github.com/fatiando/harmonica/pull/299#issuecomment-1164470873
+    - Import all filters with a wildcard
+    - Testing the filters
+        - Dummy tests for the filters themselves
+        - Tests for the transformations against sample grid if we can
+        - Check the old fatiando tests on filters: https://github.com/fatiando/fatiando/blob/master/fatiando/gravmag/tests/test_transform.py
+        - Use simple models for testing, leave sample data for docs
+        - Idea: change current tests for upward derivative, ditch the sample grid, use a simple model
+- Boule:
+    - New docs and logo! https://www.fatiando.org/boule/dev/ Feedback and PRs please :heart: 
+    - Uses new [sphinx-design](https://sphinx-design.readthedocs.io/en/latest/) plugin that replaces sphinx-panels
+    - New README: https://github.com/fatiando/boule vs https://github.com/fatiando/boule/tree/v0.3.1
+    - Renamed `master` to `main`
+    - Updated development workflow to use `build` and `pyproject.toml`
+    - Coordinate conversions moved to [pymap3d](https://github.com/fatiando/boule/issues/31) and already out in v2.9.0: https://github.com/geospace-code/pymap3d/pull/55
+        - Methods have been deprecated to be removed in Boule v0.5
+    - Backwards breaking changes:
+        - Sphere no longer inherits from Ellipsoid. Only includes essential properties and methods. This means no geocentric radius, a bunch of the eccentricities, coordinate conversions. 
+        - Ellipsoid.emm is now private.
+        - All modules now have leading `_` in their names.
+    - Anything else should go in Boule v0.4? 
+        - Last release to support Python 3.6. 
+- Where to put information on coordinate systems? Lu and Santi wrote a lot of good text around it but it relates to multiple projects. Should it go in `fatiando/tutorials` instead? See https://github.com/fatiando/boule/issues/31
+    - Some more content that can be copied: https://tesseroids.readthedocs.io/en/stable/theory.html
+- Social media and web:
+    - Our very first unboxing video! :heart_eyes: https://twitter.com/fatiandoaterra/status/1539663047677153283?s=20&t=dy3MmXl2wvjKrHx8pdojCQ
+    - Gif of website evolution from the internet archive: https://twitter.com/fatiandoaterra/status/1540080163966312450?s=20&t=dy3MmXl2wvjKrHx8pdojCQ
+    - Suddenly a lot of trafic from Nigeria to Harmonica pages: https://plausible.io/fatiando.org?country=NG&country_name=Nigeria
+    - https://plausible.io/legacy.fatiando.org
+- Ditch Slackbot and use Google Calendar reminders
+
+## 2022-06-17
+
+**Time:** 00:00 (UTC)
+
+**Participants:**
+
+- Santi
+- Matt
+- Lu
+
+**Discussion points:**
+
+- Now we have a [Fatiando Community Forum](https://github.com/orgs/fatiando/discussions) :tada:
+    - Feel free to introduce yourself
+- Boule got a lot of love!
+    - A lot of maintenance
+    - Compatibility with [`pymap3d`](https://github.com/geospace-code/pymap3d/)
+- Adding collaborators to `*-dev` teams
+    - The `harmonica-dev`, `pooch-dev`, etc teams give write access to repositories
+    - Would be great to include regular collaborators on those
+    - Security requirements:
+        - Enable 2FA on their GitHub account: https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa
+        - Recommendations:
+            - Use a **strong** and **unique** password
+            - Randomly generated and high number of characters
+            - Use a password manager:
+                - Bitwarden (in the cloud): https://bitwarden.com/
+                - KeepassXC (locally): https://keepassxc.org/
+- Harmonica
+    - Fixes to the new documentation
+    - Merged PR with progressbar for prisms computations :rocket:
+    - Fixed CIs failing due to slight difference in tesseroid docstring examples
+        - It's better if we don't print floats in doctests, they often aren't meaningful, will surely fail doctests at some point
+    - Drafting geometry inversions:
+        - https://github.com/fatiando/harmonica/issues/322
+        - Matt shared he's work inverting the bathymetry below ice sheets in Antarctica
+        - Lu's idea of defining a class for multiple PrismLayer that share top or bottom boundaries
+        - Get residual and invert an oscillating surface for the bathymetry around a reference level
+        - Idea: use SimPEG TreeMeshes and Harmonica forward model for prisms
+    - Variable density prisms:
+        - Might be something in Fukushima's works: https://www.researchgate.net/publication/328552272_Recursive_computation_of_gravitational_field_of_a_right_rectangular_parallelepiped_with_density_varying_vertically_by_following_an_arbitrary_degree_polynomial
+
+
+## 2022-06-10
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Santi
+- Leo
+- Agustina
+- Lu
+
+**Discussion points:**
+
+- New docs in Harmonica: https://www.fatiando.org/harmonica/dev/
+    - Need feedback! Good opportunity to contribute!
+- Add a precomputed grid to Ensaio for FFT filters examples:
+    - Canada gravity? https://open.canada.ca/data/en/dataset/5a4e46fe-3e52-57ce-9335-832b5e79fecc (map: https://geoscan.nrcan.gc.ca/images/geoscan/of8076.jpg)
+        - Observation heights?
+        - Which region should we cut?
+        - Read surfer grids: https://pvgeo.org/examples/grids/read-surfer.html
+        - Ask SimPEG about interesting regions for the sample grid
+    - Lu's suggestion for a mag grid: https://github.com/fatiando-data/.github/issues/12
+- Repository with collection of data: https://dataunderground.org/
+    - Crowdsourced
+    - Some links to repositories here https://github.com/softwareunderground/awesome-open-geoscience#data-repositories
+- Changing meeting times once every week: better time for people in Oceania
+    - Meeting planner with our timezones: https://www.timeanddate.com/worldclock/meetingtime.html?day=11&month=6&year=2022&p1=301&p2=51&p3=256&p4=22&p5=196&iv=0
+    - Schedule next meeting for Friday 17 June 00:00 GMT 
+- Giving Boule some love:
+    - Closed some issues which are either not possible or we decided against doing them ([76](https://github.com/fatiando/boule/issues/76), [21](https://github.com/fatiando/boule/issues/21), [19](https://github.com/fatiando/boule/issues/19))
+- Ideas about new class for stacked PrismLayers:
+    - Store thickness instead of top and bottom
+    - Store the top surface only
+    - Dimensions would be easting, northing and layer number
+    - thicknesses would be 3d arrays then
+    - Could be a building block for Matt's inversions: https://github.com/fatiando/harmonica/issues/322
+- Created Fatiando Discussions, tighted to `fatiando/community`: https://github.com/orgs/fatiando/discussions
+    - Start creating a few discussions, then organize them
+    - Update website (this page https://www.fatiando.org/contact/): add link to discussions above
+
+## 2022-06-03
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Federico
+- Santiago
+
+**Discussion points:**
+
+- FFT filters + derivative upwards are merged!
+    - https://github.com/fatiando/harmonica/pull/238
+    - We can start working in adding the other filters
+- Harmonica new docs, merged!
+    - https://github.com/fatiando/harmonica/pull/305
+    - Published: https://www.fatiando.org/harmonica/dev/
+    - Write on Slack about it and ask for feedback and collaborations
+- SimPEG meeting
+    - Seogi was interested in our tesseroids for large scale inversions
+    - Talks on basin inversions: using Harmonica forward models and SimPEG inversion framework
+    - Magnetic forward modellings. Future plans?
+- Start using GitHub projects within Harmonica?
+
+## 2022-05-27
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Leo
+- Santi
+- Mariana
+- Lu
+
+**Discussion points:**
+
+- Grid method in Harmonica equivalent sources
+    - It raises the Verde FutureWarning for future deprecation of the `shape`, `region` and `spacing` arguments, in favor of using `coordinates`.
+    - Should we deprecate those directly in Harmonica?
+    - https://github.com/fatiando/harmonica/pull/311
+    - Remove it! Mariana can put a pop up note on the video tutorials warning people about the change.
+- Idea: Split our current tutorial in 3-4 20 min chunks to make it easier to re-record.
+- Mariana suggested always mentioning the version of packages and year when starting a recording. Point people to where they find the most up-to-date information.
+- Merging season in Harmonica!
+    - Upward derivatives with FFT [#238](https://github.com/fatiando/harmonica/pull/238)
+        - Ready to go!
+        - Bug in `xrft` when arrays have `upward` coordinates, but we will solve it upstream.
+        - Need to get some data for examples: https://github.com/fatiando-data/.github/issues/12
+        - Rename freq domain filter functions to `derivative_upward_kernel`
+        - Every filter could live inside their own `transformations.py` file (both spatial domain and filter kernels)
+    - isostatic_moho_airy [#307](https://github.com/fatiando/harmonica/pull/307)
+        - Rename function to `isostatic_moho_airy`
+        - Don't bother to recover the `isostasy_airy`
+        - Test if density arrays work as well
+        - Check coverage
+- Enforcing private subpackages:
+    - https://github.com/fatiando/harmonica/issues/314
+- Harmonica User guide [#305](https://github.com/fatiando/harmonica/pull/305):
+    - Will try to merge sooner than later
+    - Collaborations will be **very** welcomed!
+    - Ideas:
+        - remove the _This software is in the early stages of design and implementation_ warning or change it a little bit
+        - I think this spooks people out
+        - Change it to green (not so alarming), rephrase to "ready to be used but still changing"
+        - Adapting to user feedback, positive side of "still changing"
+
+## 2022-05-20
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Agustina
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Plotting blocks from verde.BlockReduce
+    - Understanding k-d trees
+    - From block centers to `matplotlib.patches.Rectangle`
+- Remove point_mass_gravity function [#310](https://github.com/fatiando/harmonica/pull/310)
+    - Need to remove unused `warnings` import and ready to be merged! 🎉
+- Boule: Add example to calculate the global gravity disturbance [#102](https://github.com/fatiando/boule/pull/102)
+    - GitHub Actions need to use conda for building docs since we are using GMT
+ 
+ 
+## 2022-05-13
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Federico
+- Leo
+- Lu
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- T-shirts! https://softwareunderground.org/shop
+- Software Underground as fiscal sponsor
+    - Read Matt's post
+- Live coding a basement depth gravity inversion :female-technologist:. The [video recording of this part](https://www.youtube.com/watch?v=XqhvjhpHo6I) was uploaded in Youtube by Mariana 
+- New Airy isostasy function by Lu! (https://github.com/fatiando/harmonica/pull/307)
+    - New approach to make it more general
+    - `basement` argument (height/depth to crystalyne basement)
+    - `layers` dict: supports multiple layers (e.g. sedimens, water, ice). We need to pass thickness and density. Both thickness and density could be arrays!
+    - Should we break backward compatiblity?
+        - moho_depth_airy?
+        - isostatic_moho_airy
+    - Add support for variable density for the crust (docstring + tests)
+    - Add deprecation warning for `isostasy_airy`
+    - PendingDeprecation warning instead FutureWarning
+    - This would be really cool paired with a oceanic crust density model as a function of age
+        - This type of calculation is useful for Moho gravity inversion as well in the ocean
+        - Leo has code for the cooling models from a class. Maybe put that into a cooling model package.
+        - Which then requires a good package name (suggestions please!)
+
+
+## 2022-05-06
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Agustina
+- Federico
+- Santi
+
+**Discussion points:**
+
+- Ensaio v0.4 released! :tada: :rocket:
+    - Changelog: https://www.fatiando.org/ensaio/latest/changes.html
+    - New logo!
+    - Two new datasets (useful for Harmonica docs): 
+        - gravity from Bushveld Igenous Complex
+        - Topography grid of Southern Africa at full ETOPO1 resolution
+- A lot happening in Harmonica
+    - Drop support for Python 3.6 ([#309](https://github.com/fatiando/harmonica/pull/309))
+    - Computation of tensor components for point sources ([#288](https://github.com/fatiando/harmonica/pull/288))
+    - Lu opened a PR for a more general Airy isostasy function :muscle: 
+        - Instead of topography + bathymetry, works with crystaline basement and thicknesses of the layers
+    - FFT domains:
+        - Upward derivative + fft filters framework soon to be merged ([#307](https://github.com/fatiando/harmonica/pull/307))
+        - After that, we will include every filter that Lu wrote on [#299](https://github.com/fatiando/harmonica/pull/307)
+        - Bug in `xrft.pad` when passing a DataArray with `upward` coordinate as 2D array. Need to report and fix it.
+    - Applying FFT to a profile (1D):
+        - We can use numpy for it
+        - Might worth checking if we can do it with `xrft` (it should work)
+    
+    
+## 2022-04-29
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Federico
+- Leo
+- Lu
+- Santi
+
+**Discussion points:**
+
+- Revise author order criteria (https://github.com/fatiando/community/pull/53)
+    - Change release checklist in `fatiando/.github`
+    - Change it for papers too
+        - If journal doesn't allowed first author as "Fatiando team":
+            - Keep order by number of commits
+    - Include conference proceedings to authorship guidelines
+- Great tutorial of Python packaging by Matt Hall at Transform22: https://www.youtube.com/watch?v=fnmIHKyNRIA
+    - Matt had an issue with the tests
+        - Is it ok to include tests with the source code (like we do)?
+        - Any pros and cons of leaving them outside the source code?
+        - `pip install mypackage` vs `python -m build; pip install dist/mypackage*.whl`
+    - Dependencies inside `setup.cfg`
+        - Use dependente for getting dependencies and use conda to install it (for building docs)
+    - Alternatives to `setuptools`
+        - flit: https://pypi.org/project/flit/
+- Forward modelling tensor components
+    - Should our functions be able to take `"g_ne"` and `"g_en"` as `field` argument and return the same result?
+        - Write a sanitization function for these components.
+- What about a Mastodon account for Fatiando?
+    - A good instance for it: https://scicomm.xyz/about 
+    - Santi signed up, Leo will too
+    - Santi will reach out to the moderator to see if a Fatiando account would be OK
+    - Ask on SwUng and Twitter if where people are going
+- T-shirts! :star-struck: https://softwareunderground.org/shop
+- Mariana is now admin for YouTube and Twitter :tada: 
+- Try to use the SwUng Jitsi again? We're kind of paying for that as community so better than squatting on the free jitsi right?
+    - Yes!
+    - Change links:
+        - Here
+        - In the Slack reminder
+        - In the `community` repo
+- GitHub Support button to Software Undergound
+    - Ongoing conversation: https://swung.slack.com/archives/C0138FEJRUZ/p1651241437232619
+
+## 2022-04-22
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Gelson
+- Lu
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Santi is working on a new face for Harmonica docs!
+    - Make topgoraphic correction a toctree. Then include one section for BOuguer correction and one for forward modelling the topography.
+    - Include instructions to convert geoid heights to ellipsoid heights.
+    - Cut south africa gravity to Bushveld area. Upload a bushveld gravity dataset to Ensaio. Upload a topography grid for Bushveld.
+- Using Ensaio in Harmonica
+    - We will deprecate `datasets` module in v0.6.0
+    - The new docs will use ensaio for getting sample datasets
+    - Should we keep synthetic surveys (ensaio would be an optional dependency, not required)?
+        - Just ditch them.
+- Merging prisms to PyVista PR (https://github.com/fatiando/harmonica/pull/291)
+    - Should we make `harmonica.visualization.prism_to_pyvista` public? Should we create a new `visualization` module?
+        - Make it a module and make the `prisms_to_pyvista` function public.
+    - CIs won't pass because codecov will complain on a reduction of coverage: we cannot test if the `if pyvista: ...; except: ...;` works to reach 100% coverage. Can we mock it?
+- Change Airy Isostatic based on RET?
+	- More flexable
+	- https://nbviewer.org/github/LL-Geo/PFToolbox/blob/master/Airy_Isostatic.ipynb
+    - Awesome job! Lu will open a PR.
+        - Take a single `layers` that could be a dictionary. Each element of it should be a tuple of (`thickness`, `density`).
+        - How to pass the basement?
+        - test against simple airy cases.
+
+
+
+## 2022-04-15
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Santi
+- Lu
+
+**Discussion points:**
+
+- Harmonica docs are getting a new face (PR coming soon)
+    - Use sphinx panels as Pooch and Verde
+    - Create a User Guide with explainatory pages of the tools in Harmonica
+    - Planning to ditch gallery example
+        - Instead, write RST files and use `jupyter-sphinx` to run blocks of code while building
+        - We will be able to generate PyVista 3D plots with `jupyter-sphinx`.
+        - API Reference could be a single list, maybe we don't need to split it in so many categories
+- Yet another talk about isostasy
+    - Idea: general function that computes isostasy taking equivalent topographic load.
+        - Might need another tool to build the topographic load from a given geological setup.
+    - Flexure
+        - It could be an fft filter
+- Talk proposal to RSECon about Pooch. Anyone wants to help?
+- Bug in xrft regarding padding
+    - Lu opened an issue
+    - Santi will try to solve it!
+- FFTs in Harmonica:
+    - Merge Lu and Santi PRs:
+        - Santi will bring the design based in building functions instead of classes
+        - Lu has already implemented a lot of filters!
+    - Add padding by default?
+    - Test functions against numerical results might have edge effects if we don't apply padding
+        - Test with padding
+        - Test without padding and crop the area to compare
+
+**For next week**
+
+- Revise author order criteria (https://github.com/fatiando/community/pull/53)``
+
+
+## 2022-04-01
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Leo
+- Mariana
+- Gelson
+- Federico
+
+**Discussion points:**
+
+- Update on using Jupyter Book to make our tutorials into a website: https://github.com/fatiando/tutorials/issues/4
+    - Mariana built a prototype book and it looks great! There is an error when downloading some of the data but not sure why.
+    - Next steps:
+        - Remove the unnecessary template files
+        - Move configuration to the base of the repository (instead of a separate `jupyter-book` folder)
+        - Add jupyter-book to the `environment.yml` file
+        - Open an PR adding the configuration
+        - After that, add a GitHub Actions to build and push the HTML to gh-pages
+            - See this example that Leo made: https://github.com/leouieda/jb-test
+            - That site is served at https://www.leouieda.com/jb-test/intro.html
+- Leo is off on vacation next week so won't be at the meeting
+
+## 2022-03-25
+
+**Time:** 14:00 (UTC)
+
+**Youtube recording:** https://youtu.be/JNMcMuMYn8E
+
+**Participants** 
+
+- Leo
+- Mariana
+- Gelson
+- Federico
+
+**Discussion points:**
+
+- Releasing Verde 1.7.0 live!
+    - Leo walked through the process of making a release of Verde.
+    - Mariana contributed some questions about the process that highlighted a few areas of improvement:
+        -  Manual editing of the log to remove commit hashes, dates, etc, could probably be automated with a smarter [git shortlog](https://git-scm.com/docs/git-shortlog) command
+        - How we order authors is a bit arbitrary (commit number) and requires manual updating all the time. **Should we just use "Fatiando a Terra Project" as the first author and list everyone alphabetically?**
+    - Had some trouble with the GitHub Actions jobs not being triggered by the release. Deleting the release and making it again on GitHub fixed the issue (see https://github.com/fatiando/verde/actions?query=event%3Arelease)
+    - Links:
+        - Release checklist issue: https://github.com/fatiando/verde/issues/341
+        - Zenodo archive: https://doi.org/10.5281/zenodo.6384887
+        - GitHub release: https://github.com/fatiando/verde/releases/tag/v1.7.0
+        - PyPI package: https://pypi.org/project/verde/1.7.0/ (automatically built and uploaded by this https://github.com/fatiando/verde/actions/runs/2040766671)
+        - New documentation: https://www.fatiando.org/verde/v1.7.0 (automatically built and uploaded by https://github.com/fatiando/verde/actions/runs/2040766672)
+    - Recorded the session and posted to YouTube (thanks Mariana).
+    
+
+## 2022-03-18
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Lu
+- Santi
+
+**Discussion points:**
+
+- Harmonica maintenance:
+    - Improve packaging by moving from `setup.py` to `setup.cfg`. Thanks Leo!
+    - Trying to extend support to Python 3.10 :crossed_fingers:
+        - Fixing issues with old version of sphinx
+- Little bit of talk about Transform22 tutorial
+- Details for future TeseroidLayer implementation
+    - Converting grids in ellipsoidal coordinates to spherical coordinates
+        - What to do with latitude and spherical latitude?
+            - Resample
+            - Assume the same
+    - TesseroidLayer in the poles
+        - Tesseroids are like triangles or trapezoids near the poles
+        - Grids around the pole have different "resolutions" depending on the latitude
+        - Possible future test: compare computations on the pole vs the same layer rotated to the equator.
+
+## 2022-03-11
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- India
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Getting to know each other. Where and in what are we doing the PhD?
+- We talked about some aspects that make it easier to contribute to the different repositories:
+    1. Santiago explained that Fatiando does not use [Jupytext](https://github.com/mwouts/jupytext) because it has different problems.
+    1. Understanding what `make` does and what a Makefile is.
+    1. The importance of being added to the list of [authors](https://github.com/fatiando/community/blob/main/AUTHORSHIP.md).
+    1. Using [ReviewNB](https://www.reviewnb.com/) to be able to see the differences between notebooks more clearly.
+
+
+
+
+## 2022-03-04
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Andrea
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Worked in parallel for ~45mins on different PRs
+    - Santi: the new `prisms_to_pyvista` feature
+    - Mariana: implement usage of Ensaio in Harmonica
+- Some pair programming on the `prisms_to_pyvista` PR (https://github.com/fatiando/harmonica/pull/291)
+    - How we can read pytest results
+    - How can we debug the issues raised by them
+    - Differences between `np.array` and `np.asarray`:
+        - `np.array` always create a new array
+        - `np.asarray` converts the input to array only if necesary (more efficient if we already know that the input might be an array in some cases)
+- Dicussions on moving gallery example of Harmonica into tutorial pages
+    - Explainations inside code comments in gallery example are aweful :face_vomiting: 
+    - Move some of the gallery examples to their own document pages
+        - They should have engaging names:
+            - s/Gradient-boosted equivalent sources/Gridding very large datasets/
+    - Andrea: make the prism layer 3D plot interactive with PyVista.
+
+
+## 2022-02-25
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Lu
+- Mariana
+- Santi
+
+**Discussion points:**
+
+- Installing fatiando-legacy under Windows
+    - python2.7 executable needs execution permissions!
+    - Numpy 1.11.3 worked! Test passed! :tada:
+- Answering questions in Slack might need more thought on context
+    - What are they trying to do?
+    - What geo problem they are trying to solve?
+    - Idea: add instructions on "how to ask help in Slack"
+        - Maybe in the Slack Welcoming bot
+        - Thanks Mariana!
+        - See "Asking for assistance subject matter expert" by Michael Pyrcz (see below)
+- Slack messages get lost in time
+    - Maybe a forum would be the best solution for the future (if the community grows too much)
+
+
+> ### Asking for Assistance from a Subject Matter Expert
+> 
+> Michael Pyrcz, University of Texas at Austin (@GeostatsGuy)
+> 
+> Everyday I get multiple e-mails from individuals, that I have never met, asking
+> for assistance. Most of the time these communications follow this pattern:
+> 
+> _"Greetings, I really enjoy your [insert specific online content]. [insert multiple requests for assistance]. Thank you, [insert name]'_
+> 
+> I've often asked for and received help from the scientific community. I feel
+> that science is a social activity, but I think there is an opportunity to
+> provide feedback on how improve the chance of success while building a network.
+> Here's some ideas on **cold contact with a subject matter expert (SME)**.
+> 
+> **Introduce Yourself** - _provide a good introduction_.
+> Go beyond your name by providing your affiliation, and then link your work to
+> the topic of interest for the SME. This is an opportunity to build your network
+> while self-advocating. You clearly know the SME, let them know you and make the
+> SME more comfortable to respond.
+> 
+> **Do Your Research** - _put significant effort into finding your own solutions and demonstrate this_.
+> The SME is not your help desk, even the most patient individual will fatigue
+> with questions that indicate that little effort has been made to research the
+> problem. We match your energy.
+> 
+> **Just Share Appreciation** - _consider just communicating appreciation_.
+> There is an amazing amount of effort and time involved to provide content to
+> the community. Yet, it is rare to only receive a message of appreciation
+> without a request. You have no idea how it warms our hearts to hear about your
+> success with our contentl We lift each other.
+> 
+> **Reasonable Requests** - _think critically about the tenability of your ask_.
+> This busy SME has put out content and now you are asking them to do more work!
+> Are you trying to leverage their altruism to profit from content that they
+> provided freely? Enough said.
+> 
+> **Contribute Back** - _the best way to learn is to do_.
+> Contribute back to the community, by providing respectful, useful feedback and
+> errata. This is one of my motivations for sharing content, the peer review
+> results in an improved product for my students. We all start somewhere.
+
+
+## 2022-02-18
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Leo
+- Santi
+- Mariana
+
+**Discussion points:**
+
+* Pair programming ensaio PR for changing versioning of datasets: https://github.com/fatiando/ensaio/pull/18
+* After the PR is merged Leo will cut new release of Ensaio
+
+## 2022-02-11
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+- Lu
+- Mariana
+- Leo
+- Santi
+
+**Discussion points:**
+
+- Replaced Google Analytics with Plausible throughout the project
+    - Now we have a more privacy-friendly analytics service.
+    - You can see the stats here: https://plausible.io/fatiando.org
+    - We also have plausible on the legacy website: https://plausible.io/legacy.fatiando.org
+- The embedded Youtube videos in our website also have trackers, so we decided to remove it with thumbnails (plus some CSS hacks to make it look like YT interface): https://www.fatiando.org/learn/
+- Leo has raised the idea to SWUNG of using Plausible for all the projects.
+    - The board is looking at it very positively :tada:
+- Pooch got a new release: 1.6.0! :rocket: :clinking_glasses: 
+- Installation instructions for the old `fatiando` package: https://www.fatiando.org/install/#Installing-the-legacy-fatiando-package
+    - No numpy v1.10 for windows, only >= 1.14 is available in conda-forge
+    - Numpy 1.9 is available: https://anaconda.org/anaconda/numpy/files?version=1.9.3
+    - If you want to try it out, try it with `mamba` instead of `conda` (it's much faster): https://mamba.readthedocs.io/en/latest/index.html
+    - Maybe not worth the effort really. 
+    - Could just tell people to copy the bit of the code that they need and see if it works in Python 3.
+    - Follow up on Slack to see what they want out of Fatiando. If it doesn't involve compiled code, it may be easier to copy the source files.
+- Santi wants to work on a `TesseroidLayer` after the PhD defense is done
+- Also transform the gallery examples into actual tutorials for Harmonica
+- Prioritize the FFT stuff that Lu started developing
+- Add forward modelling of tensor components
+- IDEA: pair programming hours!
+    - Boosts productivity
+    - Good learning experience
+    - Might be good to try this out before Transform (last week of April)
+
+## 2022-01-21
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+* Leo
+* Lu
+
+**Discussion points:**
+
+* Migration of datasets to https://github.com/fatiando-data is complete!
+    * Now need to update Ensaio to match
+* Pooch 1.6.0: https://github.com/fatiando/pooch/issues/283
+    * Will make a new release as soon as I get some time
+    * Drop Python 3.6 after this release
+* Migrating analytics to Plausible:
+    * Website, Harmonica, and legacy docs all converted
+    * Santi wrote a script: https://github.com/fatiando/community/issues/46
+    * Any help running this in other repositories is appreciated
+    * Not a moment too soon: https://tutanota.com/blog/posts/google-analytics/ (ht Santi)
+* Lu implemented some filters in Harmonica:
+    * PR: https://github.com/fatiando/harmonica/pull/299
+    * Try writing a test for the upward continuation first
+
+## 2022-01-14
+
+**Time:** 14:00 (UTC)
+
+**Participants** 
+
+* Leo
+* Santi
+
+**Discussion points:**
+
+* Happy new year! :confetti_ball: :fireworks: 
+* Move the meeting to Gather Town
+* Restructure how we forward some URLs (thanks Lu for catching the slack link error): https://github.com/fatiando/website/pull/46
+    * Contact links need to be updated in some projects still
+    * See https://github.com/fatiando/community/issues/43
+    * **Good novice issue** to tackle
+* Trying out Plausible analytics on our main website
+    * The statistics are public and anonymous for anyone who wishes to see them: https://plausible.io/fatiando.org
+    * Trial for 30 days starting 22 Dec 2021
+    * Leo will pay for now (we only need the cheapest tier)
+    * **Shall we keep this?**
+        * Decision: Keep Plausible! 
+    * We can petition Software Underground to take up costs. It's easy to transfer our account to them and they can add us as admins. Could be used by other projects and the Swung websites as well.
+        * Leo will write on the Slack explaining what we did and asking their opinion
+    * If we like it, we can switch all our docs to this:
+        * Update the code in the `doc` source template for all repositories
+        * Make a script/macro to replace the google analytics code in the rendered HTML in all `gh-pages` branches (so we can monitor visits to older pages)
+        * Have to replace [this code](https://github.com/fatiando/website/blob/6bf54d6172ecebc33f28ee2da681dc80ab36b28d/_templates/layout.html#L43) with [this code](https://github.com/fatiando/website/blob/6bf54d6172ecebc33f28ee2da681dc80ab36b28d/_templates/layout.html#L56)
+        * **Anyone interested in giving this a try?**
+    * Download and backup the data form Google Analytics. Maybe in the `community` repo. Could be a yearly thing.
+        * Need to clean the country names. Take a look at the code that Santi wrote for his thesis (https://github.com/santisoler/phd-thesis/tree/main/analytics)
+        * Make maybe a nice dashboard for this to display the data.
+* Ensaio got a first release :tada: https://www.fatiando.org/ensaio/v0.1.0
+    * Test it out with another package. Doesn't have to be a complete switch, just 1 example at a time. Verde or Harmonica are good candidates because they have more examples.
+    * **Any takers?**
+    * After discussion, the `ensaio.v1` imports are kind of strange and would require duplication of a lot of information once a new data major release is done. A better approach would be to package and release each dataset individually:
+        * Ditch `v*` modules
+        * Each `fetch_*` function will have a required `version` argument (can't be optional to avoid new releases breaking old docs)
+        * Available versions should be listed in the docstrings.
+        * Add a `source` (?) argument to choose whether to download the data from `"doi"` or `"github"`. Default to `"doi"`.
+        * Use an env variable to change source of download, maybe `ENSAIO_DOWNLOAD_GITHUB` or something. This takes precedence over the `source` argument.
+        * Each dataset needs to be moved to a different reporitory with an associated GitHub release and Zenodo DOI.
+            * Should this be `data-*` repos on github.com/fatiando or do we make a new org just for that (github.com/fatiando-data)?
+* New tool to help testing on CI: https://github.com/fatiando/dependente
+    * Used in Pooch: https://github.com/fatiando/pooch/pull/289
+* Verde got some maintenance love :heart: :
+    * Refactored the CI to make it faster: https://github.com/fatiando/verde/pull/336
+    * Replace pylint: https://github.com/fatiando/verde/pull/337
+    * Link to `fatiando/community` in the guides: https://github.com/fatiando/verde/pull/338
+* Move away from `setup.py`:
+    * See https://github.com/fatiando/pooch/pull/280
