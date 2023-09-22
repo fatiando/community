@@ -15,6 +15,8 @@
 | 2023-05-30 | BIRS workshop | ✅    | ✅   | ✅       | ✅    | ✅          | ✅        |    ✅                   | NA               |
 |2023-06-02|New Dates| #fatiando-github-feed|✅   | ✅  |✅|✅|✅|NA|NA
 |2023-09-08|IMAGE Agustina|✅|✅ |NA   | ✅  |✅|NA|NA|NA|NA
+|2023-09-20|KEGS-SEG student symposium|✅|✅ |NA   | ✅  |✅|NA|NA|NA|NA
+|2023-09-21|Gelson et. al preprint|✅|✅ |NA   | ✅  |✅|NA|NA|NA|NA
 
 
 # Templates
