@@ -26,7 +26,7 @@ up to speed with our processes.
 Here is a checklist of things to do when onboarding a new maintainer:
 
 - [ ] Add them to the appropariate GitHub team to grant admin access to the repository.
-- [ ] Add them to the `setup.cfg` file so that they show up on PyPI.
+- [ ] Add them to the `setup.cfg` and/or `pyproject.toml` file so that they show up on PyPI.
 - [ ] Make sure they have a PyPI and TestPyPI account with 2FA enabled.
 - [ ] Add them as package owners on PyPI.
 - [ ] Add them as maintainer in the corresponding conda-forge feedstock repository.
