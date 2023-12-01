@@ -108,7 +108,7 @@ To complete the entire process, you'll need:
    (or greater) on the GitHub repository.
 2. Be a maintainer on the conda-forge recipe.
 3. Write access to the Zenodo entry for the package.
-   We have a shared Fatiando account in Zenodo that should be use to upload new releases or create new packages.
+   We have a shared Fatiando account in Zenodo that should be used to upload new releases or create new packages.
 
 
 ## Citations
