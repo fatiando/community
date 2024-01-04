@@ -27,7 +27,7 @@ Our weekly Fatiando Call starts in 1 hour! These are open to everyone who is int
 :memo: Meeting notes and agenda: https://hackmd.io/@fatiando/development-calls-2024
 
 ## New Dates Fatiando Calls
-We have new dates and times for our Weekly Fatiando Development Calls! Starting on 3 June 2023, the calls will alternate weekly between Wednesday 20:00 UTC and Friday 00:00 UTC.
+We have new dates and times for our Weekly Fatiando Development Calls! Starting on October 12th, 2023, the calls will alternate weekly between Thursday at 17:00 UTC and Thursday at 00:00 UTC.
 In summary, we moved the previous time from Thursday 14:00 UTC to Friday 00:00 UTC. 
 Everyone is welcome! 🤝 
 📍More information: https://github.com/fatiando/community
