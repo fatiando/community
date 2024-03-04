@@ -24,6 +24,7 @@ Edit the list of repositories where this should be implemented.
 - [ ] [ensaio](https://github.com/fatiando/ensaio)
 - [ ] [choclo](https://github.com/fatiando/choclo)
 - [ ] [dependente](https://github.com/fatiando/dependente)
+- [ ] [burocrata](https://github.com/fatiando/burocrata)
 - [ ] [website](https://github.com/fatiando/website)
 - [ ] [tutorials](https://github.com/fatiando/tutorials)
 - [ ] [community](https://github.com/fatiando/community)
