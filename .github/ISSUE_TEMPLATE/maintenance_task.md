@@ -23,6 +23,7 @@ Edit the list of repositories where this should be implemented.
 - [ ] [verde](https://github.com/fatiando/verde)
 - [ ] [ensaio](https://github.com/fatiando/ensaio)
 - [ ] [choclo](https://github.com/fatiando/choclo)
+- [ ] [magali](https://github.com/fatiando/magali)
 - [ ] [dependente](https://github.com/fatiando/dependente)
 - [ ] [burocrata](https://github.com/fatiando/burocrata)
 - [ ] [website](https://github.com/fatiando/website)
