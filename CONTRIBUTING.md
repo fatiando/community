@@ -11,7 +11,7 @@ These are some of the many ways to contribute:
 
 * :bug: Submitting bug reports and feature requests
 * :memo: Writing tutorials or examples
-* :mag: Fixing typos and improving to the documentation
+* :mag: Fixing typos and improving the documentation
 * :bulb: Writing code for everyone to use
 
 If you get stuck at any point you can create an issue on GitHub (look for the *Issues*
@@ -83,7 +83,7 @@ information.
 ## Reporting a Bug
 
 Find the *Issues* tab on the top of the GitHub repository and click *New Issue*.
-You'll be prompted to choose between different types of issue, like bug reports and
+You'll be prompted to choose between different types of issues, like bug reports and
 feature requests.
 Choose the one that best matches your need.
 The Issue will be populated with one of our templates.
@@ -144,7 +144,7 @@ We follow the [git pull request workflow](http://www.asmeurer.com/git-workflow/)
 make changes to our codebase.
 Every change made goes through a pull request, even our own, so that our
 [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) services
-have a change to check that the code is up to standards and passes all our tests.
+have a chance to check that the code is up to standards and passes all our tests.
 This way, the *main* branch is always stable.
 
 General guidelines for pull requests (PRs):
