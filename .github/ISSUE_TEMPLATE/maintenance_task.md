@@ -1,7 +1,7 @@
 ---
 name: Maintenance
 about: Request a maintenance task that applies to several repositories
-
+labels: ["maintenance"]
 ---
 
 **Description:**
