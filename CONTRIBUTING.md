@@ -213,9 +213,11 @@ directory).
 
 ### Code style
 
-We use [Black](https://github.com/ambv/black) to format the code so we don't have to
+We use [Black](https://github.com/psf/black) and
+[isort](https://pycqa.github.io/isort/) to format the code so we don't have to
 think about it.
 Black loosely follows the [PEP8](http://pep8.org) guide but with a few differences.
+And isort sorts imports in a nice way.
 Regardless, you won't have to worry about formatting the code yourself.
 Before committing, run it to automatically format your code:
 
@@ -227,14 +229,12 @@ Don't worry if you forget to do it.
 Our continuous integration systems will warn us and you can make a new commit with the
 formatted code.
 
-We also use [flake8](http://flake8.pycqa.org/en/latest/) and
-[pylint](https://www.pylint.org/) to check the quality of the code and quickly catch
-common errors.
-The [`Makefile`](Makefile) contains rules for running both checks:
+We also use [flake8](http://flake8.pycqa.org/en/latest/) to check the quality
+of the code and quickly catch common errors.
+The [`Makefile`](Makefile) contains rules for running style and format checks:
 
 ```bash
-make check   # Runs flake8 and black (in check mode)
-make lint    # Runs pylint, which is a bit slower
+make check   # Runs flake8, and black and isort (in check mode).
 ```
 
 #### Docstrings
