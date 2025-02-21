@@ -62,7 +62,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement:
 
 * Leonardo Uieda (leouieda@gmail.com)
-* Santiago Soler (santiago.r.soler@gmail.com)
+* Santiago Soler (santisoler@fastmail.com)
 * Agustina Pesce (pesce.agustina@gmail.com)
 
 All complaints will be reviewed and investigated promptly and fairly.
