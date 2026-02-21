@@ -6,7 +6,7 @@ and responsibility for each.
 
 Holders and administrators of these accounts are expected to:
 
-* Use a atrong password, only used in a single place, and randomly generated. 
+* Use a strong password, only used in a single place, and randomly generated. 
 * Enable 2-factor authentication (2FA) if available on the account.
 * Use a password manager to store account credentials safely (i.e., don't store passwords in text files or emails to yourself).
 
