@@ -127,7 +127,7 @@ this decision, preferably by consensus but, if needed, by a majority vote.
 
 ### Community Manager
 
-The main role of the Community Managers is to breath life into our Community.
+The main role of the Community Managers is to breathe life into our Community.
 Community Managers are responsible for, among other things,
 promoting attendance at regular community calls, managing social media
 accounts, welcoming new people to the Community, approaching specific groups
