@@ -18,8 +18,7 @@ similar) open source license.
 The Project is developed by a distributed team of developers, called
 the Project Contributors (see below).
 The Project Community consists of all Contributors and users of The Project.
-Contributors work on behalf of and are responsible to the larger Project
-Community.
+Contributors work on behalf of the larger Project Community.
 We strive to keep the barrier between Contributors and users as low as
 possible.
 
@@ -169,7 +168,7 @@ Their responsibilities are:
 * Managing the release of new versions of the software.
 * Delegating responsibility for development and review to other Project
   Contributors.
-* Recruiting and mentoring new Developers and Maintainers.
+* Recruiting and mentoring new Contributors and Maintainers.
 
 Package Maintainers are appointed by existing Package Maintainers for the
 particular software upon consultation with the Steering Council.
@@ -210,6 +209,13 @@ entity or none.
 There are no responsibilities or powers assigned to Project Contributors.
 Candidates for the other roles in The Project governance are mostly recruited
 from the pool of Project Contributors.
+
+### Project Founder
+
+The Project Founders are the people who played a role in the conceptualization
+of The Project.
+They hold no special authority in The Project and are included as an
+acknowledgement of their contribution.
 
 ## Changes to this document
 
