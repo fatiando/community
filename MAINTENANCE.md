@@ -21,18 +21,18 @@ continuous integration, releasing, and instructing users on citation practices.
 ## Onboarding
 
 Current maintainers are responsible for onboarding new maintainers and getting them
-up to speed with our processes. 
+up to speed with our processes.
 
 Here is a checklist of things to do when onboarding a new maintainer:
 
-- [ ] Add them to the appropriate GitHub team to grant admin access to the repository.
-- [ ] Add them to the `setup.cfg` and/or `pyproject.toml` file so that they show up on PyPI.
+- [ ] Add them to the appropriate GitHub team to grant admin access to the repository (e.g. `{package}-maintainers`).
+- [ ] Add them to `pyproject.toml` file so that they show up on PyPI.
 - [ ] Make sure they have a PyPI and TestPyPI account with 2FA enabled.
 - [ ] Add them as package owners on PyPI.
 - [ ] Add them as maintainer in the corresponding conda-forge feedstock repository.
-- [ ] Have a meeting to talk about their new responsibilities (outlined in 
+- [ ] Have a meeting to talk about their new responsibilities (outlined in
       [`GOVERNANCE.md`](GOVERNANCE.md)).
-- [ ] When a new package release is required, arrange a video call to walk them through 
+- [ ] When a new package release is required, arrange a video call to walk them through
       the entire release process.
 
 
@@ -77,7 +77,7 @@ The CI jobs include:
 
 * Running the test suite on multiple combinations of OS, Python version,
   with and without optional dependencies.
-* Running Black, flake8, and pylint to check the code for style.
+* Running Ruff to check the code for style.
 * Building the documentation to make sure it works.
 * Pushing the built documentation HTML to the `gh-pages` branch.
 * Upload source and wheel distributions to TestPyPI (on pushes to *main*) and PyPI
@@ -117,7 +117,8 @@ The citation for a package that doesn't have an associated paper will be the
 Zenodo DOI for all versions. This citation will include everyone who has
 contributed to the project and met our [authorship criteria](AUTHORSHIP.md).
 
-Include the following text in the `CITATION.rst` file:
+Include the following text in the `doc/citing.rst` file (or `CITATION.rst` if
+it exists):
 
 ```
 This is research software **made by scientists**. Citations help us justify the
@@ -131,8 +132,8 @@ Mendeley, etc).
 ```
 
 If the project has been publish as an academic paper (for example, on
-[JOSS](https://joss.theoj.org)), **update the `CITATION.rst` to point to the
-paper instead of the Zenodo archive**.
+[JOSS](https://joss.theoj.org)), **update the `doc/citing.rst` file (or
+`CITATION.rst`) to point to the paper instead of the Zenodo archive**.
 
 ```
 If you used this software in your research, please consider citing the
