@@ -23,17 +23,30 @@ continuous integration, releasing, and instructing users on citation practices.
 Current maintainers are responsible for onboarding new maintainers and getting them
 up to speed with our processes.
 
-Here is a checklist of things to do when onboarding a new maintainer:
+Start by opening an issue in the repository titled "Onboarding {maintainer} as
+maintainer". Use the following template:
 
-- [ ] Add them to the appropriate GitHub team to grant admin access to the repository (e.g. `{package}-maintainers`).
-- [ ] Add them to `pyproject.toml` file so that they show up on PyPI.
-- [ ] Make sure they have a PyPI and TestPyPI account with 2FA enabled.
-- [ ] Add them as package owners on PyPI.
-- [ ] Add them as maintainer in the corresponding conda-forge feedstock repository.
-- [ ] Have a meeting to talk about their new responsibilities (outlined in
-      [`GOVERNANCE.md`](GOVERNANCE.md)).
-- [ ] When a new package release is required, arrange a video call to walk them through
-      the entire release process.
+> Checklist for the new maintainer:
+>
+> - [ ] Read the [`GOVERNANCE.md`](GOVERNANCE.md) and [`MAINTENANCE.md`](MAINTENANCE.md) and make sure to understand your new responsibilities. Ask any questions you might have.
+> - [ ] Add yourself to the `pyproject.toml` file in the repo (so your name show up in PyPI).
+> - [ ] Double check you are using a **unique strong password** and have **2FA enabled** on the following services (we also recommend using a password manager):
+>     - [ ] GitHub
+>     - [ ] PyPI
+>     - [ ] TestPyPI
+>     - [ ] Zenodo
+>
+> Checklist for the current maintainer:
+>
+> - [ ] Add them to the appropriate **GitHub Team** to grant admin access to the repository (e.g. `{package}-maintainers`).
+> - [ ] Add them as package maintainers on **PyPI** and **TestPyPI**.
+> - [ ] Add them as maintainer in the **conda-forge feedstock** repository.
+> - [ ] Add them to **Zenodo**. Go to the [Fatiando a Terra community](https://zenodo.org/communities/fatiando/) in Zenodo and add the new member as *Curator*.
+> - [ ] Make them aware of these invitations, since most of them expire after a few days.
+> - [ ] When a new package release is required, arrange a video call to walk them through the entire release process.
+
+Follow the instructions in the issue and close it when all boxes have been
+checked.
 
 
 ## Branches
