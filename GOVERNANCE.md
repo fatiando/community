@@ -188,7 +188,7 @@ and package distribution services (PyPI, conda-forge) for which they are
 responsible.
 It is expected that they will employ standard IT safety procedures to secure
 shared passwords and their own accounts (using a password manager, enabling
-two-factor authentication, avoiding duplication of passwords, etc).
+two-factor authentication, avoiding reuse of passwords, etc).
 
 ### Package Author
 
@@ -242,7 +242,7 @@ document, as per the [CC-0 public domain dedication / license][cc0].
 [simpeg]: https://github.com/simpeg/community/blob/main/governance.md
 [jupyter]: https://github.com/jupyter/governance/blob/master/governance.md
 [numpy]: https://github.com/numpy/numpy/blob/master/doc/source/dev/governance/governance.rst
-[scipy]: https://docs.scipy.org/doc/scipy/reference/dev/governance/governance.html
+[scipy]: https://docs.scipy.org/doc/scipy/dev/governance.html
 [github]: https://github.com/fatiando
 [github-data]: https://github.com/fatiando-data
 [contact]: https://www.fatiando.org/contact
