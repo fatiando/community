@@ -35,6 +35,7 @@ maintainer". Use the following template:
 >     - [ ] PyPI
 >     - [ ] TestPyPI
 >     - [ ] Zenodo
+> - [ ] Post a message below with your login on PyPI, TestPyPI, and Zenodo.
 >
 > Checklist for the current maintainer:
 >
