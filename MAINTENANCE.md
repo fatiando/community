@@ -29,7 +29,7 @@ maintainer". Use the following template:
 > Checklist for the new maintainer:
 >
 > - [ ] Read the [`GOVERNANCE.md`](https://github.com/fatiando/community/blob/main/GOVERNANCE.md) and [`MAINTENANCE.md`](https://github.com/fatiando/community/blob/main/MAINTENANCE.md) files and make sure to understand your new responsibilities. Ask any questions you might have.
-> - [ ] Add yourself to the `pyproject.toml` file in the repo (so your name show up in PyPI).
+> - [ ] Add yourself to the `maintainers` section of the `pyproject.toml` file in the repository.
 > - [ ] Double check you are using a **unique strong password** and have **2FA enabled** on the following services (we also recommend using a password manager):
 >     - [ ] GitHub
 >     - [ ] PyPI
