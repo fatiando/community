@@ -35,7 +35,7 @@ maintainer". Use the following template:
 >     - [ ] PyPI
 >     - [ ] TestPyPI
 >     - [ ] Zenodo
-> - [ ] Post a message below with your login on PyPI, TestPyPI, and Zenodo.
+> - [ ] Post a message below with your username on PyPI, TestPyPI, and Zenodo.
 >
 > Checklist for the current maintainer:
 >
@@ -145,7 +145,7 @@ Mendeley, etc).
 ```
 
 If the project has been publish as an academic paper (for example, on
-[JOSS](https://joss.theoj.org)), **update the `doc/citing.rst` file to 
+[JOSS](https://joss.theoj.org)), **update the `doc/citing.rst` file to
 point to the paper instead of the Zenodo archive**.
 
 ```
