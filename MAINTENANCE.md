@@ -130,8 +130,7 @@ The citation for a package that doesn't have an associated paper will be the
 Zenodo DOI for all versions. This citation will include everyone who has
 contributed to the project and met our [authorship criteria](AUTHORSHIP.md).
 
-Include the following text in the `doc/citing.rst` file (or `CITATION.rst` if
-it exists):
+Include the following text in the `doc/citing.rst` file:
 
 ```
 This is research software **made by scientists**. Citations help us justify the
@@ -145,8 +144,8 @@ Mendeley, etc).
 ```
 
 If the project has been publish as an academic paper (for example, on
-[JOSS](https://joss.theoj.org)), **update the `doc/citing.rst` file (or
-`CITATION.rst`) to point to the paper instead of the Zenodo archive**.
+[JOSS](https://joss.theoj.org)), **update the `doc/citing.rst` file to 
+point to the paper instead of the Zenodo archive**.
 
 ```
 If you used this software in your research, please consider citing the
