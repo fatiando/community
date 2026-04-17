@@ -18,8 +18,7 @@ similar) open source license.
 The Project is developed by a distributed team of developers, called
 the Project Contributors (see below).
 The Project Community consists of all Contributors and users of The Project.
-Contributors work on behalf of and are responsible to the larger Project
-Community.
+Contributors work on behalf of the larger Project Community.
 We strive to keep the barrier between Contributors and users as low as
 possible.
 
@@ -33,7 +32,6 @@ These are the roles that can be assigned to The Project Community members:
 - [Benevolent Dictator For Life (BDFL)](#benevolent-dictator-for-life-bdfl)
 - [Community Manager](#community-manager)
 - [Package Maintainer](#package-maintainer)
-- [Package Developer](#package-developer)
 
 Additionally, the following titles may also be assigned to people who
 have been involved in the project as a means of providing credit for their 
@@ -81,9 +79,6 @@ A newly elected Member will be mentored in their role by an existing Council
 Member (appointed by the Council) until they feel that the mentorship is no
 longer required.
 
-> The initial Steering Council was appointed by the BDFL (Leonardo Uieda) in
-> 2022.
-
 If a Council member becomes inactive in the project for a period of one year,
 they will be considered for removal from the Council.
 Before removal, the inactive Member will be approached by the BDFL to see if
@@ -100,10 +95,13 @@ The Council reserves the right to eject current Members if they are deemed to
 be actively harmful to the project's well-being, and attempts at communication
 and conflict resolution have failed.
 
+> The initial Steering Council was appointed by the BDFL (Leonardo Uieda) in
+> 2022.
+
 ### Benevolent Dictator For Life (BDFL)
 
 The Project will have a BDFL (Benevolent Dictator for Life).
-The BDFL is chair of the Steering Council (see below) and has the same
+The BDFL is part of the Steering Council and has the same
 responsibilities of other Council members.
 In addition:
 
@@ -160,6 +158,8 @@ Package Maintainers.
 Their responsibilities are:
 
 * Welcoming new contributors to the software.
+* Taking an active role in the development of new features, bug fixes, and 
+  documentation.
 * Reviewing contributions to the software in the form of pull requests, issues,
   and discussions.
 * Maintaining the health and viability of the software.
@@ -168,7 +168,7 @@ Their responsibilities are:
 * Managing the release of new versions of the software.
 * Delegating responsibility for development and review to other Project
   Contributors.
-* Recruiting and mentoring new Developers and Maintainers.
+* Recruiting and mentoring new Contributors and Maintainers.
 
 Package Maintainers are appointed by existing Package Maintainers for the
 particular software upon consultation with the Steering Council.
@@ -187,40 +187,7 @@ and package distribution services (PyPI, conda-forge) for which they are
 responsible.
 It is expected that they will employ standard IT safety procedures to secure
 shared passwords and their own accounts (using a password manager, enabling
-two-factor authentication, avoiding duplication of passwords, etc).
-
-### Package Developer
-
-The Package Developers are the ones who regularly handle most of the code 
-and documentation development for each package in The Project.
-Each of the software packages developed by The Project will have a team of
-Package Developers.
-Their responsibilities are:
-
-* Welcoming new contributors to the software.
-* Reviewing contributions to the software in the form of pull requests, issues,
-  and discussions.
-* Participating in discussions about the software goals, scope, design, and 
-  future directions.
-* Taking an active role in the development of new features, bug fixes, and 
-  documentation.
-* Mentoring new Package Developers.
-
-Package Developers are appointed by existing Package Maintainers and Developers 
-for the particular software at their discretion.
-To be eligible for appointment as a Package Developer, an individual must be a
-Project Contributor who has produced regular code or documentation contributions 
-to the software.
-Developers can step down from their role at any time.
-It is expected that they will notify the Package Maintainers and fellow
-Developers promptly when deciding to step down.
-Package Developers who become inactive for a period of one year or more may be 
-removed from their role by the Package Maintainers.
-
-Package Developers will have write (`git push`) access to the software repository.
-It is expected that they will employ standard IT safety procedures to secure
-their own accounts (using a password manager, enabling two-factor authentication, 
-avoiding duplication of passwords, etc).
+two-factor authentication, avoiding reuse of passwords, etc).
 
 ### Package Author
 
@@ -252,15 +219,9 @@ acknowledgement of their contribution.
 
 ## Changes to this document
 
-We will hold an annual meeting dedicated to discussions of The Project
-governance.
-At these meetings, we will review governance documents, including this
-document, and the overall goals and direction of The Project.
-Anyone is welcome to join these meetings.
-
 The authority to change the governance model is held by the Steering Council.
 Any changes to the governance model will be done in a consensus building
-process between the Steering Council, BDFL, Project Contributors and the
+process between the Steering Council, Package Maintainers, and the
 Community.
 
 Suggestions to governance processes can always be raised in the interim through
@@ -287,7 +248,7 @@ document, as per the [CC-0 public domain dedication / license][cc0].
 [simpeg]: https://github.com/simpeg/community/blob/main/governance.md
 [jupyter]: https://github.com/jupyter/governance/blob/master/governance.md
 [numpy]: https://github.com/numpy/numpy/blob/master/doc/source/dev/governance/governance.rst
-[scipy]: https://docs.scipy.org/doc/scipy/reference/dev/governance/governance.html
+[scipy]: https://docs.scipy.org/doc/scipy/dev/governance.html
 [github]: https://github.com/fatiando
 [github-data]: https://github.com/fatiando-data
 [contact]: https://www.fatiando.org/contact
