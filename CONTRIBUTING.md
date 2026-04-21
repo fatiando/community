@@ -48,6 +48,7 @@ read it carefully.
   - [Testing your code](#testing-your-code)
   - [Documentation](#documentation)
   - [Code Review](#code-review)
+* [Policy on Usage of Generative AI Tools](#policy-on-usage-of-generative-ai-tools)
 
 
 ## What Can I Do?
@@ -65,7 +66,7 @@ read it carefully.
 ## How Can I Talk to You?
 
 Discussion often happens in the issues and pull requests.
-In addition, we also use Slack and other services to chat and organize project 
+In addition, we also use Slack and other services to chat and organize project
 activities.
 See https://www.fatiando.org/contact for links and more information.
 
@@ -129,8 +130,8 @@ hesitate to [ask questions](#how-can-i-talk-to-you)):
 * Aaron Meurer's [tutorial on the git workflow](http://www.asmeurer.com/git-workflow/)
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-If you're new to working with git, GitHub, and the Unix Shell, we recommend 
-starting with the [Software Carpentry](https://software-carpentry.org/) lessons, 
+If you're new to working with git, GitHub, and the Unix Shell, we recommend
+starting with the [Software Carpentry](https://software-carpentry.org/) lessons,
 which are available in English and Spanish:
 
 * :gb: [Version Control with Git](http://swcarpentry.github.io/git-novice/) / :es: [Control de
@@ -196,7 +197,7 @@ conda activate ENVIRONMENT_NAME
 
 > **Note:** You'll need to activate the environment every time you start a new terminal.
 
-Most repositories will also have a [`Makefile`](Makefile) that provides commands for 
+Most repositories will also have a [`Makefile`](Makefile) that provides commands for
 installing, running the tests and coverage analysis, running linters, etc.
 If you don't want to use `make`, open the `Makefile` and copy the commands you want to
 run.
@@ -325,3 +326,79 @@ Github will show the status of these checks on the pull request.
 Try to get them all passing (green).
 If you have any trouble, leave a comment in the PR or
 [get in touch](#how-can-i-talk-to-you).
+
+
+## Policy on Usage of Generative AI Tools
+
+One of the Fatiando a Terra project's visions is to spread awareness about the
+value of high quality scientific software, and to build knowledge and train
+scientists and developers on the best practices for research software
+development.
+
+We value the creation process as a goal itself: by drafting, improving,
+redesigning, failing, and fixing we develop that knowledge, we improve our
+skills, and we can share it with the rest of the community.
+For this reason, **we prefer contributions with human-created content**, as in
+code, documentation, guides, figures, videos, etc.
+
+Generative AI tools (genAI tools) are being widely used for generating these
+types of content. We understand that some contributors might find them useful,
+and would like to include them in their workflows and use them when
+contributing to open-source projects.
+
+Usage of genAI tools in contributions to Fatiando a Terra are not forbidden,
+but when being used as an aid in developing code and editing documentation,
+**contributors must**:
+
+1. ensure that they fully understand the proposed changes and can explain why
+   they are correct, and
+2. communicate that genAI tools have been used in the process.
+
+Some allowed usages of genAI tools are:
+
+- ✅ Translating text from one language to another.
+- ✅ Reviewing **your code** to improve it or find potential issues.
+- ✅ Exploring new design ideas and different implementations.
+
+We forbid the usage of genAI tools in the following cases:
+
+- ❌ Use of AI Agents (bots) to automatically open or comment on Pull Requests,
+  Issues, and any communication channel of the project.
+- ❌ Pasting outputs of genAI content directly into Pull Requests, Issues, and
+  any communication channel of the project.
+- ❌ Use of genAI tools to circumvent license restrictions. For example,
+  reimplementing a GPL-licensed code to release it under a more permissive
+  license.
+- ❌ Use of genAI tools in code reviews in any of our repositories. We highly
+  value the *peer-review* process as a way for everyone to learn from each
+  other's expertise.
+
+Some other uses are not forbidden, but we should pay strong attention.
+For example, using genAI tools to:
+
+- ⚠️ Write code for us. While they can save some *typing time*, one needs to
+  spend time reviewing the generated output and making sure we fully understand
+  the proposed solution.
+- ⚠️ Write documentation for us. Documenting code can help identifying design
+  issues and non-intended uses of the code. Make sure the generated text is
+  accurate, and describes well how the piece of code should be used.
+- ⚠️ Ask for references on papers or books. Double check those references do
+  exists, and make sure they are relevant for the matter.
+
+Maintainers reserve the right, at their sole discretion, to close Pull
+Requests, Issues, and delete comments that incur in unacceptable usage of genAI
+tools.
+Contributors are required to elaborate on how genAI tools were used in the
+process of generating new content if a Maintainer requires it.
+We may ban and/or report users to GitHub if they repeatedly incur in
+unacceptable usage of genAI tools.
+
+
+### References
+
+This generative AI policy was based on the ones of
+[Matplotlib](https://matplotlib.org/devdocs/devel/contribute.html#restrictions-on-generative-ai-usage),
+[Scikit-Learn](https://scikit-learn.org/dev/developers/contributing.html#automated-contributions-policy),
+[SymPy](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html),
+and comments in [an open discussion in Scientific
+Python](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html).
