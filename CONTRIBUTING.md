@@ -379,6 +379,8 @@ For example, using genAI tools to:
 - ⚠️ Write code for us. While they can save some *typing time*, one needs to
   spend time reviewing the generated output and making sure we fully understand
   the proposed solution.
+- ⚠️ Write code for us that we couldn't write by ourselves. This means that
+  it's possible that we don't fully understand the generated code.
 - ⚠️ Write documentation for us. Documenting code can help identifying design
   issues and non-intended uses of the code. Make sure the generated text is
   accurate, and describes well how the piece of code should be used.
