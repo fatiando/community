@@ -2,7 +2,7 @@
 
 The purpose of this document is to formalize the governance process used by the
 project in both ordinary and extraordinary situations. It is also meant to
-clarify how decisions are made, where the decision making power lies, and the
+clarify how decisions are made, where the decision-making power lies, and the
 responsibilities of each role assigned to community members.
 
 ## The Project
@@ -24,18 +24,14 @@ possible.
 
 ## Governance
 
-> This section describes the governance and leadership model of The Project.
+These are the **roles** that can be assigned to The Project Community members:
 
-These are the roles that can be assigned to The Project Community members:
-
-- [Steering Council Member](#steering-council)
-- [Benevolent Dictator For Life (BDFL)](#benevolent-dictator-for-life-bdfl)
-- [Community Manager](#community-manager)
+- [Project Leader](#project-leader)
 - [Package Maintainer](#package-maintainer)
 
-Additionally, the following titles may also be assigned to people who
-have been involved in the project as a means of providing credit for their 
-contributions (without the responsibilities that come with one of the roles 
+Additionally, the following **titles** may also be assigned to people who
+have been involved in the project as a means of providing credit for their
+contributions (without the responsibilities that come with one of the roles
 above):
 
 - [Package Author](#package-author)
@@ -45,109 +41,44 @@ above):
 **The individuals currently occupying each role will be listed on our website
 [fatiando.org][website].**
 
-### Steering Council
+### Project Leader
 
-The overall role of the Steering Council is to ensure, through working with the
-BDFL and taking input from the Community, the long-term well-being of the
-project, both technically and as a community.
-It is expected that all communication between the Council will be carried out
-in the open through one of The Project's [communication channels][contact].
-
-The Council is responsible for planning, organization, and direction of The
+The overall role of the Project Leaders is to ensure, taking input from the
+Community, the long-term well-being of the project, both technically and as
+a community.
+Hence, Project Leaders are expected to take active roles in the project for
+extended periods of time.
+The Leaders are responsible for planning, organization, and direction of The
 Project's operations and programs.
-There is an expectation that Steering Council members will attend regular
-online meetings and invest effort in community and organizational strategy, as
-well as developing and acting on the long-term vision of The Project.
-The Steering Council may delegate their authority on a particular decision or
-set of decisions to any other Contributor at their discretion.
+There is an expectation that Leaders will attend regular online meetings and
+invest effort in community and organizational strategy, as well as developing
+and acting on the long-term vision of The Project.
 The Project encourages others to fork the project if they disagree with the
-overall direction the Council is taking.
+overall direction the Project Leaders are taking.
 
-To become eligible for being a Steering Council Member, an individual must be a
+To become eligible for being a Project Leader, an individual must be a
 Project Contributor who has produced contributions that are substantial in
-quality and quantity, and sustained over at least one year.
+quality and quantity, and sustained over time.
 Contributions include, but are not limited to, code, code review,
 infrastructure work, community participation, community help/building,
 education and outreach, design work, etc.
 We want to encourage a diverse array of backgrounds, viewpoints, and talents in
 our team.
-Potential Council Members will be nominated by existing Council Members and
-voted upon by the existing Council.
-Based on a successful vote, the newly elected Member is invited to serve in
-that capacity.
-A newly elected Member will be mentored in their role by an existing Council
-Member (appointed by the Council) until they feel that the mentorship is no
-longer required.
+Potential Project Leaders will be nominated by existing Leaders and voted upon
+by the existing Leaders.
 
-If a Council member becomes inactive in the project for a period of one year,
-they will be considered for removal from the Council.
-Before removal, the inactive Member will be approached by the BDFL to see if
-they plan on returning to active participation.
-If not, they will be removed immediately upon a Council vote.
+If a Project Leader becomes inactive in the project for an extended period of time,
+they will be considered for removal from the role.
+Before removal, the inactive Leader will be approached to see if they plan on
+returning to active participation.
+If not, they will be removed immediately upon a vote by the other Project
+Leaders.
 If they plan on returning to active participation, they will be given a grace
-period of one year.
-If they don't return to active participation within that time period, they will
-be removed by vote of the Council.
-Former Council members will be listed on the project website, acknowledging the
-period during which they were active in the Council.
+period before reassessment of their situation.
 
-The Council reserves the right to eject current Members if they are deemed to
-be actively harmful to the project's well-being, and attempts at communication
-and conflict resolution have failed.
-
-> The initial Steering Council was appointed by the BDFL (Leonardo Uieda) in
-> 2022.
-
-### Benevolent Dictator For Life (BDFL)
-
-The Project will have a BDFL (Benevolent Dictator for Life).
-The BDFL is part of the Steering Council and has the same
-responsibilities of other Council members.
-In addition:
-
-* As *Dictator*, they, have the authority to make all final decisions for The
-  Project.
-* As *Benevolent*, they, in practice, choose to defer that authority to the
-  consensus of the Community and Steering Council.
-
-It is expected that the BDFL will only rarely assert their final authority.
-Because it is rarely used, we refer to the BDFL's final authority as a
-"special" or "overriding" vote.
-When it does occur, the BDFL's override typically happens in situations where
-there is a deadlock in building consensus among the Community.
-
-The BDFL can step down at any time, and acting in good faith, will also listen
-to serious calls to do so.
-The BDFL can appoint their successor, but it is expected that the Steering
-Council and the Community will be consulted on this decision.
-If the BDFL is unable to appoint a successor, the Steering Council will make
-this decision, preferably by consensus but, if needed, by a majority vote.
-
-### Community Manager
-
-The main role of the Community Managers is to breathe life into our Community.
-Community Managers are responsible for, among other things,
-promoting attendance at regular community calls, managing social media
-accounts, welcoming new people to the Community, approaching specific groups
-for engagement and partnership with The Project (e.g., Geolatinas, Earth
-Science Women's Network), putting together
-community events, running the user survey, etc.
-Of course, no single Community Manager will be responsible for all of these
-activities.
-Sub-committees can be formed at the discretion of the current Community
-Managers to delegate responsibility for certain activities to other Project
-Contributors.
-Community Managers are appointed by the Steering Council upon suggestion from
-the Community or self-nomination by potential candidates.
-A newly appointed Community Manager will be mentored in their role by an
-existing Community Manager and/or Steering Council Member until they feel that
-the mentorship is no longer required.
-
-Community Managers will have administrative access to the accounts and
-repositories that are required to fulfil their roles.
-It is expected that they will employ standard IT safety procedures to secure
-passwords and account information (using a password manager, enabling
-two-factor authentication, avoiding duplication of passwords, etc).
+The Project Leaders reserve the right to eject current Leaders if they are
+deemed to be actively harmful to the project's well-being, and attempts at
+communication and conflict resolution have failed.
 
 ### Package Maintainer
 
@@ -158,12 +89,12 @@ Package Maintainers.
 Their responsibilities are:
 
 * Welcoming new contributors to the software.
-* Taking an active role in the development of new features, bug fixes, and 
+* Taking an active role in the development of new features, bug fixes, and
   documentation.
 * Reviewing contributions to the software in the form of pull requests, issues,
   and discussions.
 * Maintaining the health and viability of the software.
-* Leading discussions about the software goals, scope, design, and 
+* Leading discussions about the software goals, scope, design, and
   future directions.
 * Managing the release of new versions of the software.
 * Delegating responsibility for development and review to other Project
@@ -171,16 +102,14 @@ Their responsibilities are:
 * Recruiting and mentoring new Contributors and Maintainers.
 
 Package Maintainers are appointed by existing Package Maintainers for the
-particular software upon consultation with the Steering Council.
+particular software and the Project Leaders.
 To be eligible for appointment as a Package Maintainer, an individual must be a
 Project Contributor who has produced code contributions to the software that
-are substantial in quality and quantity, and sustained over at least one year.
-The Steering Council can also appoint a Package Maintainer in special
-circumstances, for example if a software has no currently acting Maintainer.
+are substantial in quality and quantity, and sustained over an extended period
+of time.
 Maintainers can step down from their role at any time.
-It is expected that they will notify the Steering Council and fellow
-Maintainers with at least one month notice so that a replacement can be
-appointed if required.
+It is expected that they will notify the Project Leaders and fellow Maintainers
+so that a replacement can be appointed if required.
 
 Package Maintainers will have administrative access to the software repository
 and package distribution services (PyPI, conda-forge) for which they are
@@ -188,6 +117,29 @@ responsible.
 It is expected that they will employ standard IT safety procedures to secure
 shared passwords and their own accounts (using a password manager, enabling
 two-factor authentication, avoiding reuse of passwords, etc).
+
+### Community Manager
+
+The main role of the Community Managers is to breathe life into our Community.
+Community Managers are responsible for, among other things, promoting attendance
+at regular community calls, managing social media accounts, welcoming new people
+to the Community, approaching specific groups for engagement and partnership
+with The Project (e.g., Geolatinas, Earth Science Women's Network), putting
+together community events, running the user survey, etc.
+
+Community Managers are appointed by the Project Leaders upon suggestion from
+the Community or self-nomination by potential candidates.
+A newly appointed Community Manager will be mentored in their role by an
+existing Community Manager and/or Project Leader.
+Community Managers can step down from their role at any time.
+It is expected that they will notify the Project Leaders  so that a replacement
+can be appointed if required.
+
+Community Managers will have access to the accounts and repositories that are
+required to fulfil their roles.
+It is expected that they will employ standard IT safety procedures to secure
+passwords and account information (using a password manager, enabling
+two-factor authentication, avoiding duplication of passwords, etc).
 
 ### Package Author
 
@@ -219,14 +171,12 @@ acknowledgement of their contribution.
 
 ## Changes to this document
 
-The authority to change the governance model is held by the Steering Council.
-Any changes to the governance model will be done in a consensus building
-process between the Steering Council, Package Maintainers, and the
-Community.
+The authority to change the governance model is held by the Project Leaders.
+Any changes to the governance model will be done in a consensus building process
+between the Project Leaders, Package Maintainers, and the Community.
 
 Suggestions to governance processes can always be raised in the interim through
-one of our [communication channels][contact] or directly to a member of the
-Steering Council.
+one of our [communication channels][contact].
 
 ## Acknowledgement
 
