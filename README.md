@@ -6,7 +6,7 @@ guidelines, meeting notes, a place to organize project wide maintenance, etc.
 ## Weekly calls (open to everyone)
 
 * 📱 **Join the video call**: https://meet.jit.si/fatiando-a-terra
-* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2025
+* 📜 **Meeting notes & agenda**: https://hackmd.io/@fatiando/development-calls-2026
 * 📅 **Shared calendar**: https://www.fatiando.org/calendar
 
 We meet up **weekly** to discuss project development, get to know each other,
