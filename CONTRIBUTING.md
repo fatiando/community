@@ -48,7 +48,7 @@ read it carefully.
   - [Testing your code](#testing-your-code)
   - [Documentation](#documentation)
   - [Code Review](#code-review)
-* [Policy on Usage of Generative AI Tools](#policy-on-usage-of-generative-ai-tools)
+* [Usage of Generative AI Tools](#usage-of-generative-ai-tools)
 
 
 ## What Can I Do?
@@ -328,7 +328,7 @@ If you have any trouble, leave a comment in the PR or
 [get in touch](#how-can-i-talk-to-you).
 
 
-## Policy on Usage of Generative AI Tools
+## Usage of Generative AI Tools
 
 One of the Fatiando a Terra project's visions is to spread awareness about the
 value of high quality scientific software, and to build knowledge and train
