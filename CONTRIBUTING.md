@@ -346,9 +346,9 @@ types of content. We understand that some contributors might find them useful,
 and would like to include them in their workflows and use them when
 contributing to open-source projects.
 
-Usage of genAI tools in contributions to Fatiando a Terra are not forbidden,
-but when being used as an aid in developing code and editing documentation,
-**contributors must**:
+Usage of genAI tools in contributions to Fatiando a Terra is **strongly
+discouraged** but are not forbidden (see below).
+When such tools are used, **contributors must**:
 
 1. ensure that they fully understand the proposed changes and can explain why
    they are correct, and
