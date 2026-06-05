@@ -350,13 +350,13 @@ Usage of genAI tools in contributions to Fatiando a Terra is **strongly
 discouraged** but are not forbidden (see below).
 When such tools are used, **contributors must**:
 
-1. ensure that they fully understand the proposed changes and can explain why
-   they are correct, and
-2. communicate that genAI tools have been used in the process.
+1. Ensure that they **fully understand the proposed changes** and can explain why
+   they are correct with the aid of a bot.
+2. **Declare** that genAI tools have been used in the process (this is covered in our PR template).
 
 Some allowed usages of genAI tools are:
 
-- ✅ Translating text from one language to another.
+- ✅ Translating text from one language to another. The text should be revised to check that the original meaning was not lost.
 - ✅ Reviewing **your code** to improve it or find potential issues.
 - ✅ Exploring new design ideas and different implementations.
 
@@ -364,21 +364,21 @@ We forbid the usage of genAI tools in the following cases:
 
 - ❌ Use of AI Agents (bots) to automatically open or comment on Pull Requests,
   Issues, and any communication channel of the project.
-- ❌ Pasting outputs of genAI content directly into Pull Requests, Issues, and
+- ❌ Pasting outputs of genAI content without human revision directly into Pull Requests, Issues, and
   any communication channel of the project.
 - ❌ Use of genAI tools to circumvent license restrictions. For example,
   reimplementing a GPL-licensed code to release it under a more permissive
   license.
-- ❌ Use of genAI tools in code reviews in any of our repositories. We highly
+- ❌ Use of genAI tools to review entire pull requests in any of our repositories. We highly
   value the *peer-review* process as a way for everyone to learn from each
-  other's expertise.
+  other's expertise. It would be OK to use the tool to check for grammar, for example, but not write the entire review.
 
 Some other uses are not forbidden, but we should pay strong attention.
 For example, using genAI tools to:
 
-- ⚠️ Write code for us. While they can save some *typing time*, one needs to
-  spend time reviewing the generated output and making sure we fully understand
-  the proposed solution.
+- ⚠️ Write code for us. While they can save you some *typing time*, we need to
+  spend time reviewing the generated output to make sure we fully understand
+  the proposed solution and then maintain it in the future. Typing time is not the bottleneck in our projects.
 - ⚠️ Write code for us that we couldn't write by ourselves. This means that
   it's possible that we don't fully understand the generated code.
 - ⚠️ Write documentation for us. Documenting code can help identifying design
@@ -387,8 +387,9 @@ For example, using genAI tools to:
 - ⚠️ Ask for references on papers or books. Double check those references do
   exists, and make sure they are relevant for the matter.
 
+The lists above are not exhaustive and serve as examples.
 Maintainers reserve the right, at their sole discretion, to close Pull
-Requests, Issues, and delete comments that incur in unacceptable usage of genAI
+Requests, Issues, and delete comments that they judge to incur in unacceptable usage of genAI
 tools.
 Contributors are required to elaborate on how genAI tools were used in the
 process of generating new content if a Maintainer requires it.
