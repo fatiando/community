@@ -341,7 +341,7 @@ skills, and we can share it with the rest of the community.
 For this reason, **we prefer contributions with human-created content**, as in
 code, documentation, guides, figures, videos, etc.
 
-Generative AI tools (genAI tools) are being widely used for generating these
+Generative AI tools (genAI tools, including chatbots and coding agents) are being widely used for generating these
 types of content. We understand that some contributors might find them useful,
 and would like to include them in their workflows and use them when
 contributing to open-source projects.
