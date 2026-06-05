@@ -330,6 +330,13 @@ If you have any trouble, leave a comment in the PR or
 
 ## Usage of Generative AI Tools
 
+Generative AI tools (genAI tools, including chatbots and coding agents) are
+being widely used for generating content such as code, text, documentation,
+images, and videos.
+We understand that some contributors might find them useful, and would like to
+include them in their workflows and use them when contributing to open-source
+projects.
+
 One of the Fatiando a Terra project's visions is to spread awareness about the
 value of high quality scientific software, and to build knowledge and train
 scientists and developers on the best practices for research software
@@ -338,13 +345,7 @@ development.
 We value the creation process as a goal itself: by drafting, improving,
 redesigning, failing, and fixing we develop that knowledge, we improve our
 skills, and we can share it with the rest of the community.
-For this reason, **we prefer contributions with human-created content**, as in
-code, documentation, guides, figures, videos, etc.
-
-Generative AI tools (genAI tools, including chatbots and coding agents) are being widely used for generating these
-types of content. We understand that some contributors might find them useful,
-and would like to include them in their workflows and use them when
-contributing to open-source projects.
+For this reason, **we prefer contributions with human-created content**.
 
 Usage of genAI tools in contributions to Fatiando a Terra is **strongly
 discouraged** but are not forbidden (see below).
