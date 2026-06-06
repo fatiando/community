@@ -335,74 +335,95 @@ being widely used for generating content such as code, text, documentation,
 images, and videos.
 We understand that some contributors might find them useful, and would like to
 include them in their workflows and use them when contributing to open-source
-projects.
+projects. This policy explains our stance on this subject.
+
+In short, **use of genAI tools in contributions to Fatiando projects is strongly
+discouraged**. We require disclosure of usage of such tools and will not accept
+contributions made mostly or entirely by genAI tools. Under some circumstances,
+genAI usage  may be acceptable (see below).
 
 One of the Fatiando a Terra project's visions is to spread awareness about the
 value of high quality scientific software, and to build knowledge and train
 scientists and developers on the best practices for research software
-development.
+development. **We value equally the creation of well-thought-out software and
+the training of new generations of developers.**
+We treat the creation process as a goal itself: by drafting, improving,
+redesigning, failing, discussing, and fixing things we develop that knowledge,
+we improve our skills, and we can share it with the rest of the community.
+For this reason, **we strongly prefer contributions with human-created content**.
 
-We value the creation process as a goal itself: by drafting, improving,
-redesigning, failing, and fixing we develop that knowledge, we improve our
-skills, and we can share it with the rest of the community.
-For this reason, **we prefer contributions with human-created content**.
+While genAI tools can save **you** some time typing or trying to understand
+our code, *we* will need to spend **our limited time** reviewing the generated
+output and then maintaining it in the future. **Typing time is not the
+bottleneck** in our projects. What takes time is the careful discussion between
+people with a deep knowledge of the code to try to make the right design
+decisions that will ensure the projects have strong foundations. Overreliance
+on genAI tools will actively hinder the process of training people with a deep
+knowledge of the code. In other words, we don't subscribe to the "move fast and
+break things" mentality. Our approach is to "move slowly and purposefully and
+fix things".
 
-Usage of genAI tools in contributions to Fatiando a Terra is **strongly
-discouraged** but are not forbidden (see below).
-When such tools are used, **contributors must**:
+When submitting Pull Requests to Fatiando projects, **contributors must**:
 
-1. Ensure that they **fully understand the proposed changes** and can explain why
-   they are correct with the aid of a bot.
-2. **Declare** that genAI tools have been used in the process (this is covered in our PR template).
+1. **Declare** that genAI tools have been used in the process (this is covered
+   in our PR template).
+2. Ensure that they **authored and fully understand the proposed changes** and
+   can explain why they are correct without the aid of a bot.
 
-Some allowed usages of genAI tools are:
+Allowed cases of genAI tools are:
 
-- ✅ Translating text from one language to another. The text should be revised to check that the original meaning was not lost.
-- ✅ Reviewing **your code** to improve it or find potential issues.
-- ✅ Exploring new design ideas and different implementations.
+- ✅ Translating text from one language to another. The text should be revised
+  to check that the original meaning was not lost. We **strongly prefer** that
+  contributors write their own text, even if they are not fluent in English.
+  LLM-based translations and text review tends to smooth away details which are
+  critical for technical content like documentation and code comments. It is
+  easier for us to revise English than to insert details back into the text.
+- ✅ Reviewing **the contributors own code** to try to improve it or find
+  potential issues. This means that contributors wrote the original implementation
+  and asked for review only on the new code (not the entire project). While this
+  may be helpful, we will provide code review on Pull Requests and there is no
+  shame in submitting a contribution that is not yet up to standard. We will guide
+  inexperienced contributors through code improvements to meet our standards.
+- ✅ Exploring new design ideas and different implementations. This can be
+  helpful if a contributor is not entire happy with their implementation and needs
+  a starting point. Note that the genAI-generated implementation should not be
+  submitted as is and should serve only as a basis for your own code.
 
-We forbid the usage of genAI tools in the following cases:
+Some examples where the use of genAI will result in a contribution being rejected
+are:
 
-- ❌ Use of AI Agents (bots) to automatically open or comment on Pull Requests,
-  Issues, and any communication channel of the project.
-- ❌ Pasting outputs of genAI content without human revision directly into Pull Requests, Issues, and
+- ❌ Use of genAI tools to write the code in its entirety. As stated above,
+  typing time is not the bottleneck in our projects and our purpose is to train
+  new contributors. This is not acceptable even if a contributor understands the code.
+- ❌ Use of genAI tools to write documentation in its entirety. The process of
+  writing docstrings, tutorials, and examples is when we identify design issues
+  and non-intended uses of the code. Having genAI write the documentation robs
+  the contribution of this process and will lead to poor design decisions being
+  perpetuated in the code.
+- ❌ Use of genAI tools to ask for references on papers or books. Such
+  references often don't exist or are not relevant to what is being discussed.
+- ❌ Use of genAI to automatically open or comment on Pull Requests, Issues, and
   any communication channel of the project.
+- ❌ Pasting outputs of genAI content without human revision directly into Pull
+  Requests, Issues, and any communication channel of the project.
 - ❌ Use of genAI tools to circumvent license restrictions. For example,
-  reimplementing a GPL-licensed code to release it under a more permissive
-  license.
-- ❌ Use of genAI tools to review entire pull requests in any of our repositories. We highly
-  value the *peer-review* process as a way for everyone to learn from each
-  other's expertise. It would be OK to use the tool to check for grammar, for example, but not write the entire review.
+  reimplementing a GPL-licensed or closed-source code to add it to one our
+  permissively licensed projects.
+- ❌ Use of genAI tools to review entire pull requests. We highly value the
+  *peer-review* process as a way for everyone to learn from each other's
+  expertise. It would be OK to use the tool to check for grammar, for example,
+  but not write the entire review.
 
-Some other uses are not forbidden, but we should pay strong attention.
-For example, using genAI tools to:
+**The lists above are not exhaustive and serve as examples.** Maintainers may,
+at their sole discretion, close Pull Requests, Issues, and delete comments
+that they judge to incur in unacceptable usage of genAI tools. Contributors are
+required to elaborate on how genAI tools were used in the process of generating
+new content if a Maintainer requires it. **We may ban and/or report users if
+they repeatedly incur in unacceptable usage of genAI tools**.
 
-- ⚠️ Write code for us. While they can save you some *typing time*, we need to
-  spend time reviewing the generated output to make sure we fully understand
-  the proposed solution and then maintain it in the future. Typing time is not the bottleneck in our projects.
-- ⚠️ Write code for us that we couldn't write by ourselves. This means that
-  it's possible that we don't fully understand the generated code.
-- ⚠️ Write documentation for us. Documenting code can help identifying design
-  issues and non-intended uses of the code. Make sure the generated text is
-  accurate, and describes well how the piece of code should be used.
-- ⚠️ Ask for references on papers or books. Double check those references do
-  exists, and make sure they are relevant for the matter.
-
-The lists above are not exhaustive and serve as examples.
-Maintainers reserve the right, at their sole discretion, to close Pull
-Requests, Issues, and delete comments that they judge to incur in unacceptable usage of genAI
-tools.
-Contributors are required to elaborate on how genAI tools were used in the
-process of generating new content if a Maintainer requires it.
-We may ban and/or report users to GitHub if they repeatedly incur in
-unacceptable usage of genAI tools.
-
-
-### References
-
-This generative AI policy was based on the ones of
-[Matplotlib](https://matplotlib.org/devdocs/devel/contribute.html#restrictions-on-generative-ai-usage),
-[Scikit-Learn](https://scikit-learn.org/dev/developers/contributing.html#automated-contributions-policy),
-[SymPy](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html),
-and comments in [an open discussion in Scientific
-Python](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html).
+> This generative AI policy was based on the ones of
+> [Matplotlib](https://matplotlib.org/devdocs/devel/contribute.html#restrictions-on-generative-ai-usage),
+> [Scikit-Learn](https://scikit-learn.org/dev/developers/contributing.html#automated-contributions-policy),
+> [SymPy](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html),
+> and comments in
+> [an open discussion in Scientific Python](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html).
