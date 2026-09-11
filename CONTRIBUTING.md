@@ -49,7 +49,6 @@ We encourage all to read them carefully.
   - [Testing your code](#testing-your-code)
   - [Documentation](#documentation)
   - [Code Review](#code-review)
-* [Usage of Generative AI Tools](#usage-of-generative-ai-tools)
 
 
 ## What Can I Do?
