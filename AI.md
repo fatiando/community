@@ -19,13 +19,13 @@ Rules for contributions (PRs, Issues, etc.):
    including GitHub. Usage of machine translation and proofing tools is OK.
 3. **Do not use AI agents and bots to submit PRs, Issues, etc.** on your behalf.
 4. **Do not submit PRs, Issues, etc. with substantial GenAI content**. The
-   amount that counts as substation is subjective and up to the maintainers to
+   amount that counts as substantial is subjective and up to the maintainers to
    determine.
 5. **Do not generate images and text with GenAI** for documentation and project
    websites.
 6. If you do use GenAI to aid you in your contribution following the guidelines
    above, **you are expected to take full responsibility for its outputs** and
-  be prepared to explain it in detail without the aid of GenAI.
+   be prepared to explain it in detail without the aid of GenAI.
 
 > [!IMPORTANT]
 > Enforcement of these rules is up to Package Maintainers and Project Leaders
@@ -48,7 +48,7 @@ our code, **we** will need to spend **our limited time** reviewing the generated
 output and then maintaining it in the future. **Typing time is not the
 bottleneck** in our projects. What takes time is the careful discussion between
 people with a deep knowledge of the code to try to make the right design
-decisions that will ensure the projects have strong foundations. Overreliance
+decisions that will ensure the projects have strong foundations. Over reliance
 on GenAI tools will actively hinder the process of training people with a deep
 knowledge of the code. In other words, we don't subscribe to the "move fast and
 break things" mentality. Our approach is to "move slowly and purposefully and
