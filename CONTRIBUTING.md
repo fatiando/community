@@ -30,8 +30,9 @@ contributions.
 
 The goal is to maintain a diverse community that's pleasant for everyone.
 **Please be considerate and respectful of others**.
-Everyone must abide by our [Code of Conduct](CODE_OF_CONDUCT.md) and we encourage all to
-read it carefully.
+Everyone must abide by our [Code of Conduct](CODE_OF_CONDUCT.md) and
+[Generative AI Policy](AI.md).
+We encourage all to read them carefully.
 
 
 ## Contents
@@ -65,7 +66,7 @@ read it carefully.
 ## How Can I Talk to You?
 
 Discussion often happens in the issues and pull requests.
-In addition, we also use Slack and other services to chat and organize project 
+In addition, we also use Slack and other services to chat and organize project
 activities.
 See https://www.fatiando.org/contact for links and more information.
 
@@ -129,8 +130,8 @@ hesitate to [ask questions](#how-can-i-talk-to-you)):
 * Aaron Meurer's [tutorial on the git workflow](http://www.asmeurer.com/git-workflow/)
 * [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-If you're new to working with git, GitHub, and the Unix Shell, we recommend 
-starting with the [Software Carpentry](https://software-carpentry.org/) lessons, 
+If you're new to working with git, GitHub, and the Unix Shell, we recommend
+starting with the [Software Carpentry](https://software-carpentry.org/) lessons,
 which are available in English and Spanish:
 
 * :gb: [Version Control with Git](http://swcarpentry.github.io/git-novice/) / :es: [Control de
@@ -196,7 +197,7 @@ conda activate ENVIRONMENT_NAME
 
 > **Note:** You'll need to activate the environment every time you start a new terminal.
 
-Most repositories will also have a [`Makefile`](Makefile) that provides commands for 
+Most repositories will also have a [`Makefile`](Makefile) that provides commands for
 installing, running the tests and coverage analysis, running linters, etc.
 If you don't want to use `make`, open the `Makefile` and copy the commands you want to
 run.
