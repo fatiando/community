@@ -48,7 +48,7 @@ our code, **we** will need to spend **our limited time** reviewing the generated
 output and then maintaining it in the future. **Typing time is not the
 bottleneck** in our projects. What takes time is the careful discussion between
 people with a deep knowledge of the code to try to make the right design
-decisions that will ensure the projects have strong foundations. Over reliance
+decisions that will ensure the projects have strong foundations. Overreliance
 on GenAI tools will actively hinder the process of training people with a deep
 knowledge of the code. In other words, we don't subscribe to the "move fast and
 break things" mentality. Our approach is to "move slowly and purposefully and
