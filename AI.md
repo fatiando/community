@@ -61,5 +61,5 @@ fix things".
 > [SymPy](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html),
 > [GODOT](https://godotengine.org/article/contribution-policy-2026/),
 > and comments in
-> [an open discussion in Scientific Python](https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html).
+> [an open discussion in Scientific Python](https://discuss.scientific-python.org/t/a-policy-on-generative-ai-assisted-contributions).
 
