@@ -17,6 +17,8 @@ Describe what should be changed, replaced or implemented. Be as detailed as poss
 Edit the list of repositories where this should be implemented.
 -->
 
+- [ ] [srtomo](https://github.com/fatiando/srtomo)
+- [ ] [bordado](https://github.com/fatiando/bordado)
 - [ ] [boule](https://github.com/fatiando/boule)
 - [ ] [harmonica](https://github.com/fatiando/harmonica)
 - [ ] [pooch](https://github.com/fatiando/pooch)
